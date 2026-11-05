@@ -199,7 +199,7 @@ section.blk + section.blk{padding-top:0}
 /* desktop: photo left at the same size as the What We Do photos, the three needs stacked on the right */
 @media (min-width:901px){
   .why-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:24px;align-items:start;container-type:inline-size}
-  .why-grid .photo.wide{aspect-ratio:auto;height:calc((100cqw - 24px) * .46 / 1.557);margin:0;border-radius:14px}
+  .why-grid .photo.wide{aspect-ratio:auto;height:calc((100cqw - 24px) * .46 / 1.557);margin:0;border-radius:0}
   .why-grid .why{grid-template-columns:1fr;grid-auto-rows:1fr;gap:8px;min-height:calc((100cqw - 24px) * .46 / 1.557)}
   .why-grid .why li{padding:8px 20px;gap:2px;border-radius:14px;align-content:center}
   .why-grid .why h3{font-size:16.5px}
@@ -231,18 +231,21 @@ section.blk + section.blk{padding-top:0}
 .gb-ic{flex:none;width:40px;height:40px;color:var(--orange)}
 .goal-bar p{font-size:clamp(15px,1.6vw,17px);font-weight:500;line-height:1.6}
 .goal-bar b{color:#c43d0c;font-weight:800;margin-right:10px}
-.act{margin-bottom:44px}
-.act-title{font-size:clamp(20px,2.4vw,26px);font-weight:900;color:var(--orange-deep);margin-bottom:18px;display:flex;gap:8px}
+/* activity blocks: same editorial table language as the overview / process (ink rules, hairlines, Big Shoulders numbers) */
+.act{margin-bottom:44px;--s-ink:#17140f;--s-ink2:#51493d;--s-hair:rgba(23,20,15,.16);--s-deep:#c94f00;color:var(--s-ink)}
+.act-title{font-size:clamp(20px,2.4vw,24px);font-weight:800;letter-spacing:-.03em;color:var(--s-ink);margin-bottom:16px;display:flex;align-items:flex-end;gap:12px}
+.act-no{font-family:var(--f-en);font-weight:900;font-size:clamp(40px,4.2vw,48px);line-height:.86;letter-spacing:0;color:var(--s-deep)}
 .act-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:24px}
 .act-ph{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
-.act-ph img{display:block;width:100%;height:auto;aspect-ratio:981/630;object-fit:cover;border-radius:14px;max-width:100%}
-.act-ph figcaption{font-size:12.5px;color:var(--ink-soft)}
-.act-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;align-content:start;min-width:0}
-.act-list li{display:flex;align-items:center;gap:16px;background:#f0eee9;border-radius:14px;padding:14px 18px;min-height:68px}
-.act-list i{flex:none;width:44px;height:44px;border-radius:50%;background:var(--orange);display:grid;place-items:center}
-.act-list svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.act-list b{font-size:16px;font-weight:800;line-height:1.4}
-.act-list small{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+.act-ph img{display:block;width:100%;height:auto;aspect-ratio:981/630;object-fit:cover;border-radius:0;max-width:100%}
+.act-ph figcaption{font-size:12px;color:var(--s-ink2)}
+.act-list{list-style:none;margin:0;padding:0;display:grid;gap:0;align-content:start;min-width:0;border-top:2px solid var(--s-ink);border-bottom:2px solid var(--s-ink)}
+.act-list li{display:flex;align-items:center;gap:16px;padding:14px 4px;min-height:68px;border-top:1px solid var(--s-hair)}
+.act-list li:first-child{border-top:0}
+.act-list i{flex:none;width:40px;height:40px;border:1px solid var(--s-deep);display:grid;place-items:center}
+.act-list svg{width:21px;height:21px;fill:none;stroke:var(--s-deep);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.act-list b{font-size:16px;font-weight:700;line-height:1.4;letter-spacing:-.02em}
+.act-list small{display:block;font-size:12.5px;color:var(--s-ink2);margin-top:2px}
 /* desktop: the four rows share exactly the photo's height (caption hangs below the photo) */
 @media (min-width:901px){
   .act{margin-bottom:64px}
@@ -252,9 +255,9 @@ section.blk + section.blk{padding-top:0}
      981×630) and each four-box list is exactly that tall */
   .act-grid{container-type:inline-size}
   .act-ph img{width:100%;height:calc((100cqw - 24px) * .46 / 1.557);max-width:100%;object-fit:cover}
-  .act-list{grid-auto-rows:1fr;gap:8px;height:calc((100cqw - 24px) * .46 / 1.557)}
-  .act-list li{min-height:0;padding:6px 16px;gap:14px}
-  .act-list i{width:40px;height:40px}
+  .act-list{grid-auto-rows:1fr;gap:0;height:calc((100cqw - 24px) * .46 / 1.557)}
+  .act-list li{min-height:0;padding:4px 4px;gap:14px}
+  .act-list i{width:36px;height:36px}
   .act-list b{font-size:clamp(14px,1.35vw,16px)}
   .act-list small{font-size:clamp(11.5px,1.05vw,12.5px);margin-top:1px}
 }
@@ -288,8 +291,8 @@ section.blk + section.blk{padding-top:0}
 @media (max-width:560px){
   .goal-bar{flex-direction:column;align-items:flex-start;gap:10px;padding:18px 2px}
   .goal-bar b{display:block;margin:0 0 2px}
-  .act-list li{padding:12px 14px;gap:12px}
-  .act-list i{width:38px;height:38px}
+  .act-list li{padding:12px 2px;gap:12px}
+  .act-list i{width:34px;height:34px}
   .act-list b{font-size:15px}
   /* process: swipeable cards instead of a tall stack */
   .stages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-right:calc(-1 * var(--gut-r));padding-right:var(--gut-r);padding-bottom:6px;scrollbar-width:none}
@@ -653,7 +656,7 @@ section[id]{scroll-margin-top:60px}
       </div>
 
       <div class="act rv">
-        <h3 class="act-title"><span class="act-no">1.</span>염소 지원을 통한 취약가정 소득 증대</h3>
+        <h3 class="act-title"><span class="act-no">01</span>염소 지원을 통한 취약가정 소득 증대</h3>
         <div class="act-grid">
           <figure class="act-ph"><img src="img/distribution.jpg" width="981" height="630" alt="주민들에게 염소를 배분하는 모습" loading="lazy"><figcaption>염소 배분 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
           <ul class="act-list">
@@ -666,7 +669,7 @@ section[id]{scroll-margin-top:60px}
       </div>
 
       <div class="act rv">
-        <h3 class="act-title"><span class="act-no">2.</span>사육 교육을 통한 생계역량 강화</h3>
+        <h3 class="act-title"><span class="act-no">02</span>사육 교육을 통한 생계역량 강화</h3>
         <div class="act-grid">
           <figure class="act-ph"><img src="img/training.jpg" width="1054" height="703" alt="마을 주민들이 모여 교육을 받는 모습" loading="lazy"><figcaption>주민 교육 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
           <ul class="act-list">
