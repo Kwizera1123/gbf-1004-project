@@ -81,7 +81,7 @@ p{margin:0}
 /* hero */
 .hero{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
 /* photo layer starts right of the headline so the child never sits under the text */
-.hero::before{content:"";position:absolute;top:0;bottom:0;right:0;left:clamp(0px,40vw - 180px,34%);background:url("img/hero.jpg") 40% 40%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%);pointer-events:none}
+.hero::before{content:"";position:absolute;top:0;bottom:0;right:0;left:clamp(0px,64vw - 360px,44%);background:url("img/hero.jpg") 0% 40%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,31,.74) 0%,rgba(20,23,31,.46) 40%,rgba(20,23,31,.1) 70%,rgba(20,23,31,0) 100%),linear-gradient(0deg,rgba(20,23,31,.6) 0%,transparent 35%);pointer-events:none}
 .hero h1,.hero .lead{text-shadow:0 2px 14px rgba(0,0,0,.45)}
 .hero .eyebrow{color:#ff5515;font-weight:700;font-size:13px;text-shadow:0 1px 10px rgba(0,0,0,.55)}
@@ -373,7 +373,10 @@ section.blk + section.blk{padding-top:0}
   .close .wrap > *{margin-left:clamp(24px,5vw,96px)}
   .hero .wrap > .rv:first-child{margin-left:clamp(24px,5vw,96px)}
   .hero .project{margin-bottom:clamp(36px,5vw,64px)}
-  .hero .wrap{max-width:1120px;grid-template-columns:minmax(0,1fr) 300px;gap:40px}
+  .hero .wrap{max-width:1120px;grid-template-columns:minmax(0,1fr);gap:40px}
+  /* headline: second line kept on one line on desktop */
+  .hero h1{font-size:clamp(30px,3.5vw,46px)}
+  .hero h1 .h1-l2{white-space:nowrap}
   .hero .lead{font-size:16px;max-width:none}
 }
 @media (min-width:1100px){.hero .lead{white-space:nowrap}}
@@ -510,7 +513,7 @@ section[id]{scroll-margin-top:60px}
     <div class="rv">
       <p class="project" aria-label="GBF 1004 PROJECT"><span class="p-gbf">GBF</span> <span class="p-num">1004</span> <span class="p-word">PROJECT</span></p>
       <div class="eyebrow"><span data-k="year"></span> <span data-k="country"></span> 염소지원사업</div>
-      <h1>작은 염소 한 마리,<br>아이에서 마을까지 <span style="white-space:nowrap">바꾸는 <em>시작</em>입니다</span></h1>
+      <h1>작은 염소 한 마리,<br><span class="h1-l2">아이에서 마을까지 <span style="white-space:nowrap">바꾸는 <em>시작</em>입니다</span></span></h1>
       <p class="lead">기후위기와 빈곤으로 끼니를 걱정하는 <b data-k="country"></b> 취약가정에 <b>염소 <span data-k="goats"></span>마리</b>를 지원하고,<br class="br-d"> 질병관리부터 판매까지 사육 교육을 함께 제공합니다.<br class="br-d"> 염소가 새끼를 낳으면 가정에 소득과 영양이 생깁니다.</p>
     </div>
   </div>
