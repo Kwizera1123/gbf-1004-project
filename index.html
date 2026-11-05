@@ -93,21 +93,6 @@ p{margin:0}
 .hero h1 em{font-style:normal;color:var(--orange)}
 .hero .lead{margin-top:22px;font-size:clamp(15px,1.8vw,18px);color:var(--on-night-soft);max-width:34em}
 .hero .lead b{color:var(--on-night);font-weight:700}
-.goal{border:1px solid rgba(255,255,255,.16);background:rgba(20,23,31,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:18px;padding:26px 26px 22px;display:grid;gap:18px}
-.goal .lbl{font-size:13px;color:var(--on-night-soft);font-weight:500}
-.goal .big{font-family:var(--f-display);font-weight:900;font-size:clamp(32px,4.4vw,44px);line-height:1.1;letter-spacing:-.03em}
-.goal .big span{font-size:.5em;font-weight:700;margin-left:4px;color:var(--on-night-soft)}
-.goal dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;font-size:14px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px}
-.goal dt{color:var(--on-night-soft)}
-.goal dd{margin:0;font-weight:700;text-align:right}
-.goal .note{font-size:11px;color:var(--on-night-soft);white-space:nowrap;letter-spacing:-.02em}
-@media (min-width:881px){
-  .goal{width:300px;justify-self:end;padding:18px 18px 15px;gap:12px;border-radius:14px}
-  .goal .lbl{font-size:12px}
-  .goal .big{font-size:30px}
-  .goal dl{font-size:13px;gap:5px 12px;padding-top:12px}
-}
-
 /* sections */
 section.blk{padding-block:72px}
 section.blk + section.blk{padding-top:0}
@@ -389,8 +374,6 @@ section.blk + section.blk{padding-top:0}
   .hero .wrap > .rv:first-child{margin-left:clamp(24px,5vw,96px)}
   .hero .project{margin-bottom:clamp(36px,5vw,64px)}
   .hero .wrap{max-width:1120px;grid-template-columns:minmax(0,1fr) 300px;gap:40px}
-  /* goal card hugs the right edge (90px clear of the scroll dots) so it stays off the child in the photo */
-  .hero .goal{margin-right:clamp(-500px, 650px - 50vw, 70px)}
   .hero .lead{font-size:16px;max-width:none}
 }
 @media (min-width:1100px){.hero .lead{white-space:nowrap}}
@@ -455,7 +438,6 @@ section[id]{scroll-margin-top:60px}
   .brand .lg-wv{height:18px}
   .hero .eyebrow{font-size:12px;letter-spacing:.12em;line-height:1.7}
   .hero .lead{font-size:15px}
-  .goal{padding:20px 18px 18px;gap:14px}
   .sec-head{margin-bottom:22px}
   /* why: swipeable cards to keep the page short */
   .why{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-right:calc(-1 * var(--gut-r));padding-right:var(--gut-r);padding-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -531,18 +513,6 @@ section[id]{scroll-margin-top:60px}
       <h1>작은 염소 한 마리,<br>아이에서 마을까지 <span style="white-space:nowrap">바꾸는 <em>시작</em>입니다</span></h1>
       <p class="lead">기후위기와 빈곤으로 끼니를 걱정하는 <b data-k="country"></b> 취약가정에 <b>염소 <span data-k="goats"></span>마리</b>를 지원하고,<br class="br-d"> 질병관리부터 판매까지 사육 교육을 함께 제공합니다.<br class="br-d"> 염소가 새끼를 낳으면 가정에 소득과 영양이 생깁니다.</p>
     </div>
-    <aside class="goal rv" aria-label="캠페인 목표">
-      <div>
-        <div class="lbl">헤럴드 GBF 모금 목표</div>
-        <div class="big num"><span data-k="budgetKor" style="margin:0;font-size:1em;color:inherit;font-weight:900"></span><span>원</span></div>
-      </div>
-      <dl>
-        <dt>지원 염소</dt><dd class="num"><span data-k="goats"></span>마리</dd>
-        <dt>지원 가정</dt><dd class="num">약 <span data-k="families"></span>가정</dd>
-        <dt>수혜 인원</dt><dd class="num">약 <span data-k="people"></span>명</dd>
-      </dl>
-      <p class="note">* 모든 행정비 포함 · 수량은 현지 물가에 따라 변동 가능</p>
-    </aside>
   </div>
 </section>
 
