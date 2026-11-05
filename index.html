@@ -10,7 +10,7 @@
 <link rel="preload" as="image" href="img/hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
 /* Layout: dark savanna-night hero → light paper sections → dark closing band; one persistent donate bar. Single deliberate look (light body, dark bands). */
@@ -82,6 +82,7 @@ p{margin:0}
 .hero{background:var(--night) url("img/hero.jpg") 62% 40%/cover no-repeat;color:var(--on-night);position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,31,.74) 0%,rgba(20,23,31,.46) 40%,rgba(20,23,31,.1) 70%,rgba(20,23,31,0) 100%),linear-gradient(0deg,rgba(20,23,31,.6) 0%,transparent 35%);pointer-events:none}
 .hero h1,.hero .project,.hero .lead{text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero .eyebrow{color:#ff5515;font-weight:700;font-size:13px;text-shadow:0 1px 10px rgba(0,0,0,.55)}
 .hero .wrap{position:relative;z-index:1;padding-block:120px 72px;min-height:min(78vh,720px);display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:end}
 .project{font-family:var(--f-en);font-weight:900;font-size:clamp(76px,11vw,140px);line-height:.86;letter-spacing:0;text-transform:uppercase;margin:0 0 26px;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .2em}
 .project .p-num{color:var(--orange);text-shadow:0 4px 30px rgba(255,107,0,.45)}
@@ -442,7 +443,7 @@ section[id]{scroll-margin-top:60px}
   .top .wrap{height:54px}
   .brand .lg-gbf{height:26px}
   .brand .lg-wv{height:18px}
-  .hero .eyebrow{font-size:11px;letter-spacing:.12em;line-height:1.7}
+  .hero .eyebrow{font-size:12px;letter-spacing:.12em;line-height:1.7}
   .hero .lead{font-size:15px}
   .goal{padding:20px 18px 18px;gap:14px}
   .sec-head{margin-bottom:22px}
@@ -509,7 +510,7 @@ section[id]{scroll-margin-top:60px}
   <div class="wrap">
     <div class="rv">
       <p class="project" aria-label="GBF 1004 PROJECT"><span class="p-gbf">GBF</span> <span class="p-num">1004</span> <span class="p-word">PROJECT</span></p>
-      <div class="eyebrow"><span data-k="year"></span> <span data-k="country"></span> 염소지원사업<span class="m-hide"> · 염소 1,004마리, 천사의 나눔</span></div>
+      <div class="eyebrow"><span data-k="year"></span> <span data-k="country"></span> 염소지원사업</div>
       <h1>작은 염소 한 마리,<br>아이에서 마을까지 <span style="white-space:nowrap">바꾸는 <em>시작</em>입니다</span></h1>
       <p class="lead">기후위기와 빈곤으로 끼니를 걱정하는 <b data-k="country"></b> 취약가정에 <b>염소 <span data-k="goats"></span>마리</b>를 지원하고,<br class="br-d"> 질병관리부터 판매까지 사육 교육을 함께 제공합니다.<br class="br-d"> 염소가 새끼를 낳으면 가정에 소득과 영양이 생깁니다.</p>
     </div>
