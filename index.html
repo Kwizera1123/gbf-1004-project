@@ -1018,7 +1018,9 @@ var CAMPAIGN = {
   var wmsg = document.getElementById("wmapMsg"), btnAll = document.getElementById("btnAll"), btnZim = document.getElementById("btnZim"), btnSite = document.getElementById("btnSite");
   var pickEl = document.getElementById("wmPick"), hintEl = document.getElementById("wmapHint");
   var finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
-  var reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // map zooms only run when the visitor clicks, so keep them animated even when the OS
+  // "reduce animations" setting is on (many Windows PCs have it on by default)
+  var reduceMotion = false;
   hintEl.textContent = (sites.length ? "주황색 사업 지역을 누르면 그곳으로 확대돼요. " : "") + "주를 누르면 구(District)가, 구를 누르면 하위구(Ward)까지 확대돼요." + (finePointer ? " 지도를 한 번 누른 뒤에는 마우스 휠로도 확대할 수 있어요." : " 두 손가락으로 확대·축소할 수 있어요.");
   function failMap(){ wmsg.textContent = "지도를 불러오지 못했어요. 새로고침해 주세요."; wmsg.hidden = false; }
   var KO = {"Manicaland":"마니칼랜드","Mashonaland Central":"마쇼날랜드 센트럴","Mashonaland East":"마쇼날랜드 이스트","Mashonaland West":"마쇼날랜드 웨스트","Masvingo":"마스빙고","Matabeleland North":"마타벨렐란드 노스","Matabeleland South":"마타벨렐란드 사우스","Midlands":"미들랜즈","Harare":"하라레","Bulawayo":"불라와요"};
@@ -1184,6 +1186,8 @@ var CAMPAIGN = {
         if (site && map.getZoom() < Z_WARD) { flySite(site); return; }
         var p = pickAt(e.latlng);
         if (!p) return;
+        // Zimbabwe tapped from the Africa view: same smooth zoom as the "짐바브웨 전체" button
+        if (p.lv === 0) { pickEl.innerHTML = '<span class="wm-path">' + crumbs(p) + '</span>'; home(); return; }
         pickEl.innerHTML = '<span class="wm-path">' + crumbs(p) + '</span>';
         hoverF = p.f; highlight(p);
         var b = L.geoJSON(p.f).getBounds();
