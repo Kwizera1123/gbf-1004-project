@@ -79,7 +79,9 @@ p{margin:0}
 @media (max-width:880px){.topnav{display:none}}
 
 /* hero */
-.hero{background:var(--night) url("img/hero.jpg") 62% 40%/cover no-repeat;color:var(--on-night);position:relative;overflow:hidden}
+.hero{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
+/* photo layer starts right of the headline so the child never sits under the text */
+.hero::before{content:"";position:absolute;top:0;bottom:0;right:0;left:clamp(0px,40vw - 180px,34%);background:url("img/hero.jpg") 40% 40%/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,31,.74) 0%,rgba(20,23,31,.46) 40%,rgba(20,23,31,.1) 70%,rgba(20,23,31,0) 100%),linear-gradient(0deg,rgba(20,23,31,.6) 0%,transparent 35%);pointer-events:none}
 .hero h1,.hero .project,.hero .lead{text-shadow:0 2px 14px rgba(0,0,0,.45)}
 .hero .eyebrow{color:#ff5515;font-weight:700;font-size:13px;text-shadow:0 1px 10px rgba(0,0,0,.55)}
@@ -422,7 +424,7 @@ section[id]{scroll-margin-top:60px}
 .js .rv.pre{transform:translateY(16px);opacity:.35}
 
 @media (max-width:880px){
-  .hero{background-position:58% 0;background-size:auto min(118vw,640px);background-color:var(--night)}
+  .hero::before{left:0;background-position:58% 0;background-size:auto min(118vw,640px);-webkit-mask-image:none;mask-image:none}
   .hero::after{background:linear-gradient(180deg,rgba(20,23,31,0) 0,rgba(20,23,31,0) min(60vw,340px),rgba(20,23,31,.72) min(96vw,540px),var(--night) min(118vw,640px))}
   .hero .wrap{grid-template-columns:1fr;gap:32px;padding-block:min(72vw,420px) 48px;min-height:0}
   .photo.wide{aspect-ratio:16/9}
