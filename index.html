@@ -196,6 +196,15 @@ section.blk + section.blk{padding-top:0}
 .why .tag{font-family:var(--f-display);font-weight:800;font-size:13px;color:var(--orange-deep)}
 .why h3{font-size:18px;font-weight:800;line-height:1.4}
 .why p{font-size:14.5px;color:var(--ink-soft)}
+/* desktop: photo left at the same size as the What We Do photos, the three needs stacked on the right */
+@media (min-width:901px){
+  .why-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:24px;align-items:start;container-type:inline-size}
+  .why-grid .photo.wide{aspect-ratio:auto;height:calc((100cqw - 24px) * .46 / 1.557);margin:0;border-radius:14px}
+  .why-grid .why{grid-template-columns:1fr;grid-auto-rows:1fr;gap:8px;min-height:calc((100cqw - 24px) * .46 / 1.557)}
+  .why-grid .why li{padding:8px 20px;gap:2px;border-radius:14px;align-content:center}
+  .why-grid .why h3{font-size:16.5px}
+  .why-grid .why p{font-size:14px;line-height:1.55}
+}
 .swipe-hint{display:none;align-items:center;gap:6px;margin-top:10px;font-size:12px;font-weight:700;color:var(--ink-soft)}
 .swipe-hint svg{width:16px;height:16px}
 
@@ -617,6 +626,7 @@ section[id]{scroll-margin-top:60px}
         <h2>비가 오지 않으면, 아이들의 밥상이 비어갑니다</h2>
         <p class="lines">반복되는 가뭄으로 농사만으로는 가족을 먹이기 어렵습니다.<br class="br-d"> 기댈 수 있는 생계 자산이 없는 가정일수록 여성과 아이들이 가장 먼저 위험해집니다.</p>
       </div>
+      <div class="why-grid">
       <figure class="photo wide rv"><img src="img/drought.jpg" alt="가뭄으로 말라버린 옥수수밭" loading="lazy"><figcaption>가뭄으로 말라버린 농경지</figcaption></figure>
       <div class="why">
         <ul>
@@ -624,6 +634,7 @@ section[id]{scroll-margin-top:60px}
           <li class="rv"><span class="tag">취약한 생계</span><h3>기댈 수 있는 소득원과 생계 자산 부족</h3><p>가축 같은 생산 자산이 없어 흉년이 들면 가계가 그대로 무너집니다.</p></li>
           <li class="rv"><span class="tag">기후 위기</span><h3>빈곤과 기후위기가 겹친 여성·아동 가장</h3><p>여성이나 아동이 가장인 가정, 임산부와 장애인이 있는 가정이 가장 큰 영향을 받습니다.</p></li>
         </ul>
+      </div>
       </div>
       <p class="swipe-hint" aria-hidden="true">옆으로 넘겨 보세요 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
     </div>
