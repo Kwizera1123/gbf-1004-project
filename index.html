@@ -526,6 +526,17 @@ section[id]{scroll-margin-top:60px}
   .js .rv,.js .rv.pre{transition:none;transform:none;opacity:1}
   .fab .pulse{animation:none}
 }
+/* phone polish: no text under 12px, touch targets at least 44px */
+@media (max-width:880px){
+  .tbd{font-size:12px}
+  .wmap-legend{font-size:12px}
+  .st-top i{font-size:12px}
+  .rp-steps .rs-dot{font-size:12px;width:24px;height:24px}
+  .leaflet-touch .leaflet-bar a{width:44px;height:44px;line-height:44px;font-size:22px}
+  .wbtn{min-height:44px;padding:10px 16px;font-size:13.5px}
+  .gmap{display:inline-flex;align-items:center;min-height:44px}
+  .rp-replay{min-height:44px;padding:10px 14px}
+}
 </style>
 
 <!-- 수정 포인트: 아래 <script>의 CAMPAIGN 설정값만 바꾸면 국가·예산·기간·후원 링크가 페이지 전체에 반영됩니다. -->
