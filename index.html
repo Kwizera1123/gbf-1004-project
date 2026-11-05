@@ -99,6 +99,8 @@ section.blk + section.blk{padding-top:0}
 .sec-head{display:grid;gap:16px;margin-bottom:32px;max-width:40em}
 .sec-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;line-height:1.3}
 .sec-head p{color:var(--ink-soft)}
+.sec-head .goal-line{max-width:none}
+.sec-head .goal-line b{color:#c43d0c;font-weight:800;margin-right:4px}
 /* section titles stay on one line from tablet width up; the intro paragraph keeps a readable measure */
 @media (min-width:760px){.sec-head{max-width:none}.sec-head h2{white-space:nowrap}.sec-head p{max-width:40em}.sec-head p.lines{max-width:none}}
 @media (min-width:881px){.sec-head p.lines{white-space:nowrap}}
@@ -227,10 +229,6 @@ section.blk + section.blk{padding-top:0}
 .sched-title small{font-family:var(--f-body);font-size:14px;font-weight:500;color:var(--ink-soft)}
 
 /* what we do: goal banner, two activity blocks, process flow */
-.goal-bar{display:flex;align-items:center;gap:18px;color:var(--ink);border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:20px 4px;margin-bottom:40px}
-.gb-ic{flex:none;width:40px;height:40px;color:var(--orange)}
-.goal-bar p{font-size:clamp(15px,1.6vw,17px);font-weight:500;line-height:1.6}
-.goal-bar b{color:#c43d0c;font-weight:800;margin-right:10px}
 /* activity blocks: same editorial table language as the overview / process (ink rules, hairlines, Big Shoulders numbers) */
 .act{margin-bottom:44px;--s-ink:#17140f;--s-ink2:#51493d;--s-hair:rgba(23,20,15,.16);--s-deep:#c94f00;color:var(--s-ink)}
 .act-title{font-size:clamp(20px,2.4vw,24px);font-weight:800;letter-spacing:-.03em;color:var(--s-ink);margin-bottom:16px;display:flex;align-items:flex-end;gap:12px}
@@ -289,9 +287,7 @@ section.blk + section.blk{padding-top:0}
   .stage:nth-child(n+3){border-top:1px solid var(--s-hair)}
 }
 @media (max-width:560px){
-  .goal-bar{flex-direction:column;align-items:flex-start;gap:10px;padding:18px 2px}
-  .goal-bar b{display:block;margin:0 0 2px}
-  .act-list li{padding:12px 2px;gap:12px}
+    .act-list li{padding:12px 2px;gap:12px}
   .act-list i{width:34px;height:34px}
   .act-list b{font-size:15px}
   /* process: swipeable cards instead of a tall stack */
@@ -648,11 +644,7 @@ section[id]{scroll-margin-top:60px}
       <div class="sec-head rv">
         <div class="eyebrow lined">What We Do</div>
         <h2>염소 <span data-k="goats"></span>마리 지원과 사육 교육</h2>
-      </div>
-
-      <div class="goal-bar rv">
-        <svg class="gb-ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="24" r="12"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
-        <p><b>사업목표</b>취약가정에 염소를 지원함으로써 가계소득과 식량안보를 개선하고 지속가능한 생계 기반을 강화합니다.</p>
+        <p class="goal-line"><b>사업목표</b> 취약가정에 염소를 지원함으로써 가계소득과 식량안보를 개선하고 지속가능한 생계 기반을 강화합니다.</p>
       </div>
 
       <div class="act rv">
