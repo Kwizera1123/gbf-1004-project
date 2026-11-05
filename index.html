@@ -361,14 +361,21 @@ section.blk + section.blk{padding-top:0}
 .foot-note{margin-top:14px;font-size:13px;color:var(--ink-soft)}
 
 /* summary table */
-.summary{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.summary dl{margin:0;display:grid;grid-template-columns:150px 1fr}
-.summary dt,.summary dd{padding:16px 22px;border-top:1px solid var(--line);margin:0}
+/* overview: editorial table — key figures on top, square rows with hairlines (Local Impact style) */
+.summary{--s-ink:#17140f;--s-ink2:#51493d;--s-hair:rgba(23,20,15,.16);--s-deep:#c94f00;border-top:2px solid var(--s-ink);border-bottom:2px solid var(--s-ink);color:var(--s-ink)}
+.sum-facts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr) minmax(0,1.45fr);border-bottom:1px solid var(--s-ink)}
+.sum-facts>div{padding:20px 16px 20px 0;min-width:0}
+.sum-facts>div+div{border-left:1px solid var(--s-hair);padding-left:18px}
+.sum-facts strong{display:block;font-family:var(--f-en);font-weight:900;font-size:clamp(36px,4.2vw,48px);line-height:1;letter-spacing:0;color:var(--s-ink);white-space:nowrap}
+.sum-facts strong i{font-style:normal;color:var(--s-deep)}
+.sum-facts>div>span{display:block;margin-top:6px;font-size:13.5px;line-height:1.55;color:var(--s-ink2)}
+.summary dl{margin:0;display:grid;grid-template-columns:160px 1fr}
+.summary dt,.summary dd{margin:0;padding:15px 0;border-top:1px solid var(--s-hair)}
 .summary dt:first-of-type,.summary dd:first-of-type{border-top:0}
-.summary dt{font-weight:700;font-size:14px;color:var(--ink-soft);background:#faf9f7}
-.summary dd{font-size:15px;min-width:0}
-.summary dd .sub{display:block;font-size:13px;color:var(--ink-soft)}
-.tbd{display:inline-block;font-size:11px;font-weight:700;color:var(--orange-deep);border:1px solid currentColor;border-radius:999px;padding:0 8px;margin-left:6px;vertical-align:2px;line-height:1.6}
+.summary dt{font-family:var(--f-mono);font-weight:500;font-size:12.5px;letter-spacing:.06em;color:var(--s-deep);padding-top:18px}
+.summary dd{font-size:15.5px;font-weight:600;min-width:0}
+.summary dd .sub{display:block;margin-top:2px;font-size:13.5px;font-weight:400;color:var(--s-ink2)}
+.tbd{display:inline-block;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.06em;color:#c94f00;border:1px solid currentColor;padding:1px 7px;margin-left:8px;vertical-align:2px;line-height:1.4}
 
 /* closing band */
 /* closing: photo sits to the right (child + goat stay bright), copy on the open left side */
@@ -462,14 +469,21 @@ section[id]{scroll-margin-top:60px}
   .gift{padding:18px 16px}
   .gift .goat svg{width:18px;height:18px}
   .facts dd{font-size:14px}
-  .summary dd{font-size:14px}
   .close h2{font-size:26px}
   .steps{grid-template-columns:1fr;border-top:0}
   .steps li{border-top:1px solid var(--line);padding:18px 0 10px;grid-template-columns:48px 1fr;column-gap:8px}
   .steps li .n{grid-row:span 3;font-size:32px}
   .pillars{grid-template-columns:1fr}
-  .summary dl{grid-template-columns:96px 1fr}
-  .summary dt,.summary dd{padding:14px 14px}
+  .summary dl{grid-template-columns:84px 1fr}
+  .summary dt,.summary dd{padding:13px 0}
+  .summary dt{padding-top:15px;font-size:12px}
+  .summary dd{font-size:15px}
+  .sum-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sum-facts>div{padding:16px 12px 16px 0}
+  /* phone: budget gets its own full row on top, goats | families below; the period stays in the table */
+  .sum-facts>div:nth-child(3){display:none}
+  .sum-facts>div:nth-child(4){order:-1;grid-column:1/-1;border-left:0;padding-left:0;border-bottom:1px solid var(--s-hair)}
+  .sum-facts>div:nth-child(1){border-left:0;padding-left:0}
   .fab{left:calc(16px + env(safe-area-inset-left,0px));right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));justify-content:center;padding:17px 20px;font-size:17px}
   .close .wrap{padding-bottom:110px}
   .btn{width:100%;max-width:360px}
@@ -540,6 +554,12 @@ section[id]{scroll-margin-top:60px}
         <h2>한눈에 보는 사업</h2>
       </div>
       <div class="summary rv">
+        <div class="sum-facts">
+          <div><strong><span data-k="goats"></span><i>마리</i></strong><span>지원 염소 · 사육 교육 포함</span></div>
+          <div><strong><span data-k="families"></span><i>가정</i></strong><span>지원 대상 약 <span data-k="people"></span>명</span></div>
+          <div><strong><span data-k="months"></span><i>개월</i></strong><span>사업 기간 · <span data-k="periodDates"></span></span></div>
+          <div><strong><span data-k="budgetNum"></span><i>원</i></strong><span>총 사업비 · 모든 행정비 포함</span></div>
+        </div>
         <dl>
           <dt>사업명</dt><dd><span data-k="name"></span></dd>
           <dt>국가 / 지역</dt><dd><span data-k="country"></span> · <span data-k="region"></span><span class="tbd" data-tbd="region">확정 예정</span></dd>
@@ -761,7 +781,8 @@ var CAMPAIGN = {
     year: c.year, country: c.country, region: c.region, period: c.period,
     name: c.year + " " + c.country + " 염소지원사업",
     goats: fmt(goats), families: fmt(families), people: fmt(people),
-    budgetKor: kor(c.budget), perGoatKor: (c.perGoat % 10000 === 0 ? fmt(c.perGoat / 10000) + "만" : fmt(c.perGoat)), budgetFull: fmt(c.budget) + "원 (" + kor(c.budget) + "원)"
+    budgetKor: kor(c.budget), perGoatKor: (c.perGoat % 10000 === 0 ? fmt(c.perGoat / 10000) + "만" : fmt(c.perGoat)), budgetFull: fmt(c.budget) + "원 (" + kor(c.budget) + "원)",
+    budgetNum: fmt(c.budget), months: ((c.period.match(/(\d+)\s*개월/) || [])[1] || ""), periodDates: c.period.replace(/\s*\(.*\)\s*$/, "")
   };
   document.querySelectorAll("[data-k]").forEach(function(el){
     var v = vals[el.getAttribute("data-k")]; if (v != null) el.textContent = v;
