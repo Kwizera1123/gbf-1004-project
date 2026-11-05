@@ -348,9 +348,11 @@ section.blk + section.blk{padding-top:0}
 /* summary table */
 /* overview: editorial table — key figures on top, square rows with hairlines (Local Impact style) */
 .summary{--s-ink:#17140f;--s-ink2:#51493d;--s-hair:rgba(23,20,15,.16);--s-deep:#c94f00;border-top:2px solid var(--s-ink);border-bottom:2px solid var(--s-ink);color:var(--s-ink)}
-.sum-facts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr) minmax(0,1.45fr);border-bottom:1px solid var(--s-ink)}
-.sum-facts>div{padding:20px 16px 20px 0;min-width:0}
-.sum-facts>div+div{border-left:1px solid var(--s-hair);padding-left:18px}
+.sum-facts{display:grid;grid-template-columns:auto auto auto minmax(0,1fr);border-bottom:1px solid var(--s-ink)}
+.sum-facts>div{padding:20px 28px 20px 0;min-width:0}
+.sum-facts>div+div{border-left:1px solid var(--s-hair);padding-left:24px}
+.sum-facts>div:last-child{padding-right:0}
+@media (min-width:881px){.sum-facts>div>span{white-space:nowrap}}
 .sum-facts strong{display:block;font-family:var(--f-en);font-weight:900;font-size:clamp(36px,4.2vw,48px);line-height:1;letter-spacing:0;color:var(--s-ink);white-space:nowrap}
 .sum-facts strong i{font-style:normal;color:var(--s-deep)}
 .sum-facts>div>span{display:block;margin-top:6px;font-size:13.5px;line-height:1.55;color:var(--s-ink2)}
