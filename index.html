@@ -372,8 +372,9 @@ section.blk + section.blk{padding-top:0}
 
 /* closing band */
 /* closing: photo sits to the right (child + goat stay bright), copy on the open left side */
-.close{background:var(--night) url("img/closing.jpg") right 30%/auto 100% no-repeat;color:var(--on-night);text-align:left;position:relative}
-.close::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--night) 0,var(--night) calc(100% - 830px),rgba(20,23,31,.55) calc(100% - 700px),rgba(20,23,31,0) calc(100% - 520px)),linear-gradient(90deg,rgba(20,23,31,.9) 0%,rgba(20,23,31,.6) 36%,rgba(20,23,31,0) 58%),linear-gradient(0deg,rgba(20,23,31,.45) 0%,transparent 30%)}
+.close{--cr:clamp(0px,24vw - 190px,320px);background:var(--night) url("img/closing.jpg") right var(--cr) top 30%/auto 100% no-repeat;color:var(--on-night);text-align:left;position:relative}
+/* --cr nudges the photo in from the right edge on wide screens; the right-hand gap fades into night */
+.close::before{content:"";position:absolute;inset:0;background:linear-gradient(270deg,var(--night) 0,var(--night) var(--cr),rgba(20,23,31,0) calc(var(--cr) * 1.7)),linear-gradient(90deg,var(--night) 0,var(--night) calc(100% - 830px - var(--cr)),rgba(20,23,31,.55) calc(100% - 700px - var(--cr)),rgba(20,23,31,0) calc(100% - 520px - var(--cr))),linear-gradient(90deg,rgba(20,23,31,.9) 0%,rgba(20,23,31,.6) 36%,rgba(20,23,31,0) 58%),linear-gradient(0deg,rgba(20,23,31,.45) 0%,transparent 30%)}
 .close .wrap{position:relative;padding-block:110px 130px;display:grid;justify-items:start;gap:20px;min-height:600px;align-content:center}
 .close .wrap > *{max-width:520px}
 @media (min-width:881px){
