@@ -331,6 +331,16 @@ section.blk + section.blk{padding-top:0}
 .rp-desc b{color:#c43d0c}
 .rp-replay{margin-top:10px;background:none;border:0;padding:6px 2px;font:inherit;font-size:13px;font-weight:700;color:#6f6a60;cursor:pointer}
 .rp-replay:hover{color:var(--orange)}
+/* desktop: the picture spans exactly from the top of the first step (1마리) to the bottom of the last (1,004마리) */
+@media (min-width:881px){
+  .ripple{grid-template-rows:auto auto auto;align-items:start;row-gap:0}
+  .rp-side{display:contents}
+  .rp-stage{grid-column:1;grid-row:1;align-self:stretch;min-height:280px}
+  .rp-stage canvas{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
+  .rp-steps{grid-column:2;grid-row:1}
+  .rp-desc{grid-column:2;grid-row:2}
+  .rp-replay{grid-column:2;grid-row:3;justify-self:start}
+}
 @media (max-width:880px){
   .ripple{grid-template-columns:1fr;padding:14px;gap:16px}
   .rp-stage canvas{aspect-ratio:1/0.9}
@@ -1014,6 +1024,7 @@ var CAMPAIGN = {
     btns.forEach(function(b){ b.addEventListener("click", function(){ go(+b.dataset.i, true); }); });
     document.getElementById("rpReplay").addEventListener("click", play);
     window.addEventListener("resize", size);
+    if (window.ResizeObserver) new ResizeObserver(function(){ size(); }).observe(cv);
     size(); go(0, true);
     // auto-play once, the first time the panel is mostly on screen
     if (!reduce) {
