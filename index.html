@@ -569,8 +569,8 @@ section[id]{scroll-margin-top:60px}
             <span data-lv="3"><i class="wd"></i>하위구 <em>Ward · 1,961</em></span>
           </div>
           <div class="wmap-ctrl">
-            <button type="button" class="wbtn" id="btnAll">아프리카</button>
-            <button type="button" class="wbtn on" id="btnZim">짐바브웨 전체</button>
+            <button type="button" class="wbtn on" id="btnAll">아프리카</button>
+            <button type="button" class="wbtn" id="btnZim">짐바브웨 전체</button>
             <button type="button" class="wbtn site" id="btnSite" hidden>사업 지역</button>
           </div>
         </div>
@@ -1027,14 +1027,15 @@ var CAMPAIGN = {
   var NEIGH = [["잠비아", -14.6, 27.4], ["모잠비크", -17.6, 34.6], ["보츠와나", -21.6, 24.9], ["남아프리카공화국", -23.6, 29.6]];
   if (window.L && window.fetch) {
     var map = L.map("lmap", {
-      zoomSnap: .25, zoomDelta: .5, minZoom: 3, maxZoom: 13, scrollWheelZoom: false,
+      zoomSnap: .25, zoomDelta: .5, minZoom: 2, maxZoom: 13, scrollWheelZoom: false,
       dragging: finePointer, tap: false, worldCopyJump: false, attributionControl: true,
       maxBounds: [[-50, -40], [45, 85]], maxBoundsViscosity: .8
     });
     map.attributionControl.setPrefix(false);
     map.attributionControl.addAttribution("경계: Natural Earth · geoBoundaries");
-    var startAfrica = !reduceMotion;
-    map.setView(startAfrica ? [-8, 24] : [-19, 29.6], startAfrica ? 3.25 : 6);
+    // default view: the whole of Africa (stays until the visitor clicks)
+    var AFRICA = L.latLngBounds([[-35, -18], [37.5, 51.5]]);
+    map.fitBounds(AFRICA, {animate: false});
     // scroll-wheel zoom only once the visitor has engaged with the map, so page scrolling isn't hijacked
     map.on("click", function(){ if (finePointer) map.scrollWheelZoom.enable(); });
     map.getContainer().addEventListener("mouseleave", function(){ map.scrollWheelZoom.disable(); });
@@ -1196,20 +1197,19 @@ var CAMPAIGN = {
       }
       function home(){ btnAll.classList.remove("on"); btnZim.classList.add("on"); if (btnSite) btnSite.classList.remove("on"); if (reduceMotion) map.fitBounds(zimBounds, {padding: [20, 20], animate: false}); else map.flyToBounds(zimBounds, {padding: [20, 20], duration: 2.2}); }
       btnZim.addEventListener("click", home);
-      btnAll.addEventListener("click", function(){ btnAll.classList.add("on"); btnZim.classList.remove("on"); if (btnSite) btnSite.classList.remove("on"); if (reduceMotion) map.setView([-8, 24], 3.25, {animate: false}); else map.flyTo([-8, 24], 3.25, {duration: 1.8}); });
+      btnAll.addEventListener("click", function(){ btnAll.classList.add("on"); btnZim.classList.remove("on"); if (btnSite) btnSite.classList.remove("on"); if (reduceMotion) map.fitBounds(AFRICA, {animate: false}); else map.flyToBounds(AFRICA, {duration: 1.8}); });
       map.on("zoomstart", function(){ if (hl) { map.removeLayer(hl); hl = null; hoverF = null; } });
       levels();
-      // fly from Africa down to Zimbabwe the first time the map comes into view
-      // (re-measure first: the container may have had no size yet when the page loaded in a hidden tab)
-      if (!startAfrica) map.fitBounds(zimBounds, {padding: [20, 20], animate: false});
+      // stay on the Africa view; re-fit once the map is first visible
+      // (the container may have had no size yet when the page loaded in a hidden tab)
       if ("IntersectionObserver" in window) {
         var once = new IntersectionObserver(function(es){
           if (!es[0].isIntersecting) return;
           once.disconnect(); map.invalidateSize({animate: false});
-          if (startAfrica) setTimeout(home, 500); else map.fitBounds(zimBounds, {padding: [20, 20], animate: false});
+          map.fitBounds(AFRICA, {animate: false});
         }, {threshold: .45});
         once.observe(map.getContainer());
-      } else home();
+      }
     }).catch(failMap);
   } else failMap();
 
