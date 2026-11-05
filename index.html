@@ -1,0 +1,1244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbfaf8">
+<title>짐바브웨 염소지원 캠페인</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="헤럴드 GBF × 월드비전 짐바브웨 염소지원사업 후원 캠페인">
+<link rel="preload" as="image" href="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500..900&family=Cormorant+Garamond:wght@600&family=Gothic+A1:wght@500;700;800;900&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: dark savanna-night hero → light paper sections → dark closing band; one persistent donate bar. Single deliberate look (light body, dark bands). */
+:root{
+  color-scheme: light;
+  --night:#14171f;        /* hero / closing band */
+  --night-2:#1d2230;
+  --paper:#f6f5f2;        /* page ground, faint warm-grey */
+  --card:#ffffff;
+  --ink:#1b1e26;
+  --ink-soft:#5b6070;
+  --line:#e3e1db;
+  --orange:#ff6b00;       /* World Vision orange — the one bold accent */
+  --orange-deep:#e05500;
+  --on-night:#f3f1ec;
+  --on-night-soft:#a9adba;
+  --f-display:"Gothic A1","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --gut-l:max(20px, env(safe-area-inset-left,0px));
+  --gut-r:max(20px, env(safe-area-inset-right,0px));
+  --wrap:1040px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+[hidden]{display:none!important}
+html,body{overflow-x:clip}
+a,button{-webkit-tap-highlight-color:transparent}
+body{margin:0;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#fbfaf8}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.eyebrow{font-family:var(--f-display);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
+.num{font-variant-numeric:tabular-nums}
+/* section label: short rule + wide-tracked caps (Archivo) */
+.eyebrow.lined{display:flex;align-items:center;gap:20px;font-family:Archivo,"Noto Sans KR",system-ui,sans-serif;font-weight:700;font-size:clamp(15px,1.7vw,21px);letter-spacing:.22em;text-transform:uppercase;color:#c43d0c;line-height:1.2}
+.eyebrow.lined::before{content:"";flex:none;width:56px;height:2px;background:#d4572a}
+.close .eyebrow.lined{color:#ff8a45}
+.close .eyebrow.lined::before{background:#ff8a45}
+@media (max-width:560px){.eyebrow.lined{gap:14px;letter-spacing:.18em}.eyebrow.lined::before{width:36px}}
+
+/* top bar */
+/* header: translucent paper bar, numbered menu (Archivo numerals + Noto Sans KR) */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(251,250,248,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid rgba(232,227,219,.7)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:60px}
+.brand{display:flex;align-items:center;gap:12px;color:#152131;font-family:var(--f-body);font-weight:500;font-size:15px;white-space:nowrap}
+.brand img{display:block;width:auto;max-width:none}
+.brand .lg-gbf{height:30px}
+.brand .lg-wv{height:22px}
+.brand .x{color:#9aa0aa}
+.top .mini{font-family:var(--f-body);font-size:13px;font-weight:700;color:#fff;background:var(--orange);text-decoration:none;padding:7px 15px;border-radius:999px;white-space:nowrap}
+.top .mini:hover{background:var(--orange-deep)}
+.progress{position:absolute;left:0;right:0;top:0;height:3px;background:transparent;pointer-events:none}
+.progress i{display:block;height:100%;width:100%;background:var(--orange);transform-origin:0 50%;transform:scaleX(0);box-shadow:0 0 8px rgba(255,107,0,.6)}
+.topnav{display:flex;gap:20px;margin-left:auto;font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;font-size:13.5px;letter-spacing:-.005em}
+.topnav a{position:relative;color:#5d6573;font-weight:400;text-decoration:none;white-space:nowrap;padding:6px 2px;transition:color .2s}
+.topnav a:hover{color:var(--orange)}
+.topnav .nn{font-family:Archivo,"Noto Sans KR",system-ui,sans-serif;font-weight:800;font-size:11px;color:#c43d0c;margin-right:5px;font-variant-numeric:tabular-nums}
+.topnav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--orange);transform:scaleX(0);transition:transform .3s}
+.topnav a.on{color:#c43d0c;font-weight:700}
+.topnav a.on::after{transform:scaleX(1)}
+.topnav a:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+@media (max-width:1080px){.topnav{gap:14px;font-size:12.5px}}
+@media (max-width:880px){.topnav{display:none}}
+
+/* hero */
+.hero{background:var(--night) url("img/hero.jpg") 62% 40%/cover no-repeat;color:var(--on-night);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,23,31,.74) 0%,rgba(20,23,31,.46) 40%,rgba(20,23,31,.1) 70%,rgba(20,23,31,0) 100%),linear-gradient(0deg,rgba(20,23,31,.6) 0%,transparent 35%);pointer-events:none}
+.hero h1,.hero .project,.hero .lead{text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero .wrap{position:relative;z-index:1;padding-block:120px 72px;min-height:min(78vh,720px);display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:end}
+.project{font-family:var(--f-display);font-weight:900;font-size:clamp(44px,8.4vw,92px);line-height:.95;letter-spacing:-.035em;margin:0 0 22px;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .22em}
+.project .p-num{color:var(--orange);text-shadow:0 4px 30px rgba(255,107,0,.45)}
+.project .p-word{font-weight:800;letter-spacing:.02em;font-size:.62em;color:var(--on-night)}
+.hero h1{font-size:clamp(28px,4.6vw,48px);font-weight:900;line-height:1.22;margin-top:16px}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .lead{margin-top:22px;font-size:clamp(15px,1.8vw,18px);color:var(--on-night-soft);max-width:34em}
+.hero .lead b{color:var(--on-night);font-weight:700}
+.goal{border:1px solid rgba(255,255,255,.16);background:rgba(20,23,31,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:18px;padding:26px 26px 22px;display:grid;gap:18px}
+.goal .lbl{font-size:13px;color:var(--on-night-soft);font-weight:500}
+.goal .big{font-family:var(--f-display);font-weight:900;font-size:clamp(32px,4.4vw,44px);line-height:1.1;letter-spacing:-.03em}
+.goal .big span{font-size:.5em;font-weight:700;margin-left:4px;color:var(--on-night-soft)}
+.goal dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:0;font-size:14px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px}
+.goal dt{color:var(--on-night-soft)}
+.goal dd{margin:0;font-weight:700;text-align:right}
+.goal .note{font-size:11px;color:var(--on-night-soft);white-space:nowrap;letter-spacing:-.02em}
+@media (min-width:881px){
+  .goal{width:300px;justify-self:end;padding:18px 18px 15px;gap:12px;border-radius:14px}
+  .goal .lbl{font-size:12px}
+  .goal .big{font-size:30px}
+  .goal dl{font-size:13px;gap:5px 12px;padding-top:12px}
+}
+
+/* sections */
+section.blk{padding-block:72px}
+section.blk + section.blk{padding-top:0}
+.sec-head{display:grid;gap:16px;margin-bottom:32px;max-width:40em}
+.sec-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;line-height:1.3}
+.sec-head p{color:var(--ink-soft)}
+/* section titles stay on one line from tablet width up; the intro paragraph keeps a readable measure */
+@media (min-width:760px){.sec-head{max-width:none}.sec-head h2{white-space:nowrap}.sec-head p{max-width:40em}.sec-head p.lines{max-width:none}}
+@media (min-width:881px){.sec-head p.lines{white-space:nowrap}}
+
+/* photos */
+.photo{position:relative;margin:0 0 20px;border-radius:18px;overflow:hidden;background:var(--line)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.photo.wide{aspect-ratio:21/8;max-width:100%}
+.photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 14px;font-size:13px;color:#fff;background:linear-gradient(0deg,rgba(0,0,0,.6),transparent)}
+.pillar .ph{margin:-24px -24px 8px;aspect-ratio:16/10;overflow:hidden;border-radius:16px 16px 0 0;max-width:calc(100% + 48px)}
+.pillar .ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.pillar:hover .ph img{transform:scale(1.04)}
+.pillar{overflow:hidden}
+
+/* Leaflet 1.9.4 (inlined) */
+.leaflet-image-layer,.leaflet-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane,.leaflet-pane>canvas,.leaflet-pane>svg,.leaflet-tile,.leaflet-tile-container,.leaflet-zoom-box{position:absolute;left:0;top:0}.leaflet-container{overflow:hidden}.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-tile{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-user-drag:none}.leaflet-tile::selection{background:0 0}.leaflet-safari .leaflet-tile{image-rendering:-webkit-optimize-contrast}.leaflet-safari .leaflet-tile-container{width:1600px;height:1600px;-webkit-transform-origin:0 0}.leaflet-marker-icon,.leaflet-marker-shadow{display:block}.leaflet-container .leaflet-overlay-pane svg{max-width:none!important;max-height:none!important}.leaflet-container .leaflet-marker-pane img,.leaflet-container .leaflet-shadow-pane img,.leaflet-container .leaflet-tile,.leaflet-container .leaflet-tile-pane img,.leaflet-container img.leaflet-image-layer{max-width:none!important;max-height:none!important;width:auto;padding:0}.leaflet-container img.leaflet-tile{mix-blend-mode:plus-lighter}.leaflet-container.leaflet-touch-zoom{-ms-touch-action:pan-x pan-y;touch-action:pan-x pan-y}.leaflet-container.leaflet-touch-drag{-ms-touch-action:pinch-zoom;touch-action:none;touch-action:pinch-zoom}.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{-ms-touch-action:none;touch-action:none}.leaflet-container{-webkit-tap-highlight-color:transparent}.leaflet-container a{-webkit-tap-highlight-color:rgba(51,181,229,.4)}.leaflet-tile{filter:inherit;visibility:hidden}.leaflet-tile-loaded{visibility:inherit}.leaflet-zoom-box{width:0;height:0;-moz-box-sizing:border-box;box-sizing:border-box;z-index:800}.leaflet-overlay-pane svg{-moz-user-select:none}.leaflet-pane{z-index:400}.leaflet-tile-pane{z-index:200}.leaflet-overlay-pane{z-index:400}.leaflet-shadow-pane{z-index:500}.leaflet-marker-pane{z-index:600}.leaflet-tooltip-pane{z-index:650}.leaflet-popup-pane{z-index:700}.leaflet-map-pane canvas{z-index:100}.leaflet-map-pane svg{z-index:200}.leaflet-vml-shape{width:1px;height:1px}.lvml{behavior:url(#default#VML);display:inline-block;position:absolute}.leaflet-control{position:relative;z-index:800;pointer-events:visiblePainted;pointer-events:auto}.leaflet-bottom,.leaflet-top{position:absolute;z-index:1000;pointer-events:none}.leaflet-top{top:0}.leaflet-right{right:0}.leaflet-bottom{bottom:0}.leaflet-left{left:0}.leaflet-control{float:left;clear:both}.leaflet-right .leaflet-control{float:right}.leaflet-top .leaflet-control{margin-top:10px}.leaflet-bottom .leaflet-control{margin-bottom:10px}.leaflet-left .leaflet-control{margin-left:10px}.leaflet-right .leaflet-control{margin-right:10px}.leaflet-fade-anim .leaflet-popup{opacity:0;-webkit-transition:opacity .2s linear;-moz-transition:opacity .2s linear;transition:opacity .2s linear}.leaflet-fade-anim .leaflet-map-pane .leaflet-popup{opacity:1}.leaflet-zoom-animated{-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0}svg.leaflet-zoom-animated{will-change:transform}.leaflet-zoom-anim .leaflet-zoom-animated{-webkit-transition:-webkit-transform .25s cubic-bezier(0,0,.25,1);-moz-transition:-moz-transform .25s cubic-bezier(0,0,.25,1);transition:transform .25s cubic-bezier(0,0,.25,1)}.leaflet-pan-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-tile{-webkit-transition:none;-moz-transition:none;transition:none}.leaflet-zoom-anim .leaflet-zoom-hide{visibility:hidden}.leaflet-interactive{cursor:pointer}.leaflet-grab{cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.leaflet-crosshair,.leaflet-crosshair .leaflet-interactive{cursor:crosshair}.leaflet-control,.leaflet-popup-pane{cursor:auto}.leaflet-dragging .leaflet-grab,.leaflet-dragging .leaflet-grab .leaflet-interactive,.leaflet-dragging .leaflet-marker-draggable{cursor:move;cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.leaflet-image-layer,.leaflet-marker-icon,.leaflet-marker-shadow,.leaflet-pane>svg path,.leaflet-tile-container{pointer-events:none}.leaflet-image-layer.leaflet-interactive,.leaflet-marker-icon.leaflet-interactive,.leaflet-pane>svg path.leaflet-interactive,svg.leaflet-image-layer.leaflet-interactive path{pointer-events:visiblePainted;pointer-events:auto}.leaflet-container{background:#ddd;outline-offset:1px}.leaflet-container a{color:#0078a8}.leaflet-zoom-box{border:2px dotted #38f;background:rgba(255,255,255,.5)}.leaflet-container{font-family:"Helvetica Neue",Arial,Helvetica,sans-serif;font-size:12px;font-size:.75rem;line-height:1.5}.leaflet-bar{box-shadow:0 1px 5px rgba(0,0,0,.65);border-radius:4px}.leaflet-bar a{background-color:#fff;border-bottom:1px solid #ccc;width:26px;height:26px;line-height:26px;display:block;text-align:center;text-decoration:none;color:#000}.leaflet-bar a,.leaflet-control-layers-toggle{background-position:50% 50%;background-repeat:no-repeat;display:block}.leaflet-bar a:focus,.leaflet-bar a:hover{background-color:#f4f4f4}.leaflet-bar a:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.leaflet-bar a:last-child{border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-bottom:none}.leaflet-bar a.leaflet-disabled{cursor:default;background-color:#f4f4f4;color:#bbb}.leaflet-touch .leaflet-bar a{width:30px;height:30px;line-height:30px}.leaflet-touch .leaflet-bar a:first-child{border-top-left-radius:2px;border-top-right-radius:2px}.leaflet-touch .leaflet-bar a:last-child{border-bottom-left-radius:2px;border-bottom-right-radius:2px}.leaflet-control-zoom-in,.leaflet-control-zoom-out{font:bold 18px 'Lucida Console',Monaco,monospace;text-indent:1px}.leaflet-touch .leaflet-control-zoom-in,.leaflet-touch .leaflet-control-zoom-out{font-size:22px}.leaflet-control-layers{box-shadow:0 1px 5px rgba(0,0,0,.4);background:#fff;border-radius:5px}.leaflet-control-layers-toggle{background-image:url(images/layers.png);width:36px;height:36px}.leaflet-retina .leaflet-control-layers-toggle{background-image:url(images/layers-2x.png);background-size:26px 26px}.leaflet-touch .leaflet-control-layers-toggle{width:44px;height:44px}.leaflet-control-layers .leaflet-control-layers-list,.leaflet-control-layers-expanded .leaflet-control-layers-toggle{display:none}.leaflet-control-layers-expanded .leaflet-control-layers-list{display:block;position:relative}.leaflet-control-layers-expanded{padding:6px 10px 6px 6px;color:#333;background:#fff}.leaflet-control-layers-scrollbar{overflow-y:scroll;overflow-x:hidden;padding-right:5px}.leaflet-control-layers-selector{margin-top:2px;position:relative;top:1px}.leaflet-control-layers label{display:block;font-size:13px;font-size:1.08333em}.leaflet-control-layers-separator{height:0;border-top:1px solid #ddd;margin:5px -10px 5px -6px}.leaflet-default-icon-path{background-image:url(images/marker-icon.png)}.leaflet-container .leaflet-control-attribution{background:#fff;background:rgba(255,255,255,.8);margin:0}.leaflet-control-attribution,.leaflet-control-scale-line{padding:0 5px;color:#333;line-height:1.4}.leaflet-control-attribution a{text-decoration:none}.leaflet-control-attribution a:focus,.leaflet-control-attribution a:hover{text-decoration:underline}.leaflet-attribution-flag{display:inline!important;vertical-align:baseline!important;width:1em;height:.6669em}.leaflet-left .leaflet-control-scale{margin-left:5px}.leaflet-bottom .leaflet-control-scale{margin-bottom:5px}.leaflet-control-scale-line{border:2px solid #777;border-top:none;line-height:1.1;padding:2px 5px 1px;white-space:nowrap;-moz-box-sizing:border-box;box-sizing:border-box;background:rgba(255,255,255,.8);text-shadow:1px 1px #fff}.leaflet-control-scale-line:not(:first-child){border-top:2px solid #777;border-bottom:none;margin-top:-2px}.leaflet-control-scale-line:not(:first-child):not(:last-child){border-bottom:2px solid #777}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-attribution,.leaflet-touch .leaflet-control-layers{box-shadow:none}.leaflet-touch .leaflet-bar,.leaflet-touch .leaflet-control-layers{border:2px solid rgba(0,0,0,.2);background-clip:padding-box}.leaflet-popup{position:absolute;text-align:center;margin-bottom:20px}.leaflet-popup-content-wrapper{padding:1px;text-align:left;border-radius:12px}.leaflet-popup-content{margin:13px 24px 13px 20px;line-height:1.3;font-size:13px;font-size:1.08333em;min-height:1px}.leaflet-popup-content p{margin:17px 0;margin:1.3em 0}.leaflet-popup-tip-container{width:40px;height:20px;position:absolute;left:50%;margin-top:-1px;margin-left:-20px;overflow:hidden;pointer-events:none}.leaflet-popup-tip{width:17px;height:17px;padding:1px;margin:-10px auto 0;pointer-events:auto;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#fff;color:#333;box-shadow:0 3px 14px rgba(0,0,0,.4)}.leaflet-container a.leaflet-popup-close-button{position:absolute;top:0;right:0;border:none;text-align:center;width:24px;height:24px;font:16px/24px Tahoma,Verdana,sans-serif;color:#757575;text-decoration:none;background:0 0}.leaflet-container a.leaflet-popup-close-button:focus,.leaflet-container a.leaflet-popup-close-button:hover{color:#585858}.leaflet-popup-scrolled{overflow:auto}.leaflet-oldie .leaflet-popup-content-wrapper{-ms-zoom:1}.leaflet-oldie .leaflet-popup-tip{width:24px;margin:0 auto}.leaflet-oldie .leaflet-control-layers,.leaflet-oldie .leaflet-control-zoom,.leaflet-oldie .leaflet-popup-content-wrapper,.leaflet-oldie .leaflet-popup-tip{border:1px solid #999}.leaflet-div-icon{background:#fff;border:1px solid #666}.leaflet-tooltip{position:absolute;padding:6px;background-color:#fff;border:1px solid #fff;border-radius:3px;color:#222;white-space:nowrap;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.4)}.leaflet-tooltip.leaflet-interactive{cursor:pointer;pointer-events:auto}.leaflet-tooltip-bottom:before,.leaflet-tooltip-left:before,.leaflet-tooltip-right:before,.leaflet-tooltip-top:before{position:absolute;pointer-events:none;border:6px solid transparent;background:0 0;content:""}.leaflet-tooltip-bottom{margin-top:6px}.leaflet-tooltip-top{margin-top:-6px}.leaflet-tooltip-bottom:before,.leaflet-tooltip-top:before{left:50%;margin-left:-6px}.leaflet-tooltip-top:before{bottom:0;margin-bottom:-12px;border-top-color:#fff}.leaflet-tooltip-bottom:before{top:0;margin-top:-12px;margin-left:-6px;border-bottom-color:#fff}.leaflet-tooltip-left{margin-left:-6px}.leaflet-tooltip-right{margin-left:6px}.leaflet-tooltip-left:before,.leaflet-tooltip-right:before{top:50%;margin-top:-6px}.leaflet-tooltip-left:before{right:0;margin-right:-12px;border-left-color:#fff}.leaflet-tooltip-right:before{left:0;margin-left:-12px;border-right-color:#fff}@media print{.leaflet-control{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+/* field map: clean light atlas + Zimbabwe admin boundaries (province / district / ward) */
+.wmap{display:grid;grid-template-columns:minmax(0,1fr) 320px;background:#f7f5f0;border:1px solid #e8e3d9;border-radius:6px;overflow:hidden}
+.wmap-stage{position:relative;min-width:0;display:flex;flex-direction:column}
+#lmap{display:block;width:100%;flex:1 1 auto;min-height:clamp(340px,44vw,540px);background:#f7f5f0;font-family:var(--f-body)}
+.wmap-legend{position:absolute;left:12px;bottom:26px;z-index:500;display:grid;gap:5px;background:rgba(255,255,255,.92);border:1px solid #e8e3d9;color:#252525;border-radius:10px;padding:10px 12px;font-size:12px;line-height:1.3;pointer-events:none}
+.wmap-legend span{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.wmap-legend i{flex:none;width:22px;height:8px;background:#f7cfac;border-top:2.5px solid #e8692a}
+.wmap-legend i.pv{border-top:3px solid #fff}
+.wmap-legend i.ds{border-top:1.5px solid #fff}
+.wmap-legend i.wd{border-top:1.5px dashed #d98a55}
+.wmap-legend em{font-style:normal;color:#8b8578;font-size:11px}
+.wmap-legend span.off{opacity:.4}
+.wm-lbl{background:none;border:0;box-shadow:none;padding:0;color:#252525;font-family:var(--f-body);font-weight:800;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 6px rgba(255,255,255,.9);white-space:nowrap;text-align:center}
+.wm-lbl::before{display:none}
+.wm-lbl.pv{font-size:14px;letter-spacing:.02em}
+.wm-lbl.ds{font-size:12px;font-weight:700;color:#5b6070}
+.wm-lbl.nb{font-size:13px;font-weight:500;color:#8b8578}
+.wm-lbl.ct{font-size:20px;font-weight:900}
+.wm-tip{font-family:var(--f-body);font-size:12.5px;font-weight:700;border-radius:8px;padding:5px 9px}
+.wm-pin{position:relative;width:18px;height:18px;border-radius:50%;background:#e32c13;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);cursor:pointer}
+.wm-pin i{position:absolute;inset:-3px;border-radius:50%;border:2px solid #ff5515;animation:wmping 1.8s ease-out infinite}
+@keyframes wmping{0%{transform:scale(1);opacity:.9}100%{transform:scale(3);opacity:0}}
+.wm-site{font-size:13px;font-weight:800;color:#c43d0c}
+@media (prefers-reduced-motion:reduce){.wm-pin i{animation:none;opacity:0}}
+.leaflet-container a.leaflet-control-zoom-in,.leaflet-container a.leaflet-control-zoom-out{color:#252525}
+.leaflet-control-attribution{font-size:10px}
+.wm-facts div.pick{flex-direction:column;gap:4px}
+.wm-facts div.pick dd{text-align:left;font-weight:500;color:#6f6a60}
+.wm-path{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;font-size:13.5px;font-weight:700;color:#252525}
+.wm-path b{font-weight:800;color:#c43d0c}
+.wm-path s{text-decoration:none;color:#b9b2a5}
+.wmap-msg{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:#8b8578;font-size:14px;pointer-events:none}
+.wmap-ctrl{position:absolute;right:12px;top:12px;z-index:500;display:flex;gap:6px}
+.wmap-ctrl .wbtn{box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.wbtn.site{background:#fff1e6;border-color:#f6b98a;color:#c43d0c}
+.wbtn.site.on{background:#e32c13;border-color:#e32c13;color:#fff}
+.wbtn{font-family:var(--f-body);font-size:12.5px;font-weight:700;color:#252525;background:#fff;border:1px solid #d9d2c5;border-radius:999px;padding:6px 13px;cursor:pointer;white-space:nowrap}
+.wbtn.on{background:#252525;border-color:#252525;color:#fff}
+.wbtn:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.wmap-side{background:#fff;border-left:1px solid #e8e3d9;padding:36px 30px 28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.wmap-side .eyebrow{color:#c43d0c;letter-spacing:.04em;text-transform:none;font-size:13px}
+.wm-big{margin:0;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;color:#252525}
+.wm-big .en{font-family:"Cormorant Garamond","Noto Serif KR",Georgia,serif;font-weight:600;font-size:48px;line-height:1;letter-spacing:-.01em}
+.wm-big .ko{font-size:17px;font-weight:500}
+.wm-desc{font-size:15px;line-height:1.75;color:#3a3a3a}
+.wm-facts{margin:0;display:grid;gap:0;border-top:1px solid #eee8de}
+.wm-facts div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #eee8de;font-size:14px}
+.wm-facts dt{color:#8b8578}
+.wm-facts dd{margin:0;font-weight:700;text-align:right}
+.wm-hint{font-size:13.5px;color:#6f6a60;margin-top:auto}
+.gmap{color:#252525;font-weight:700;text-decoration:none;font-size:13px}
+.gmap:hover{color:var(--orange)}
+@media (max-width:880px){
+  .wmap{grid-template-columns:1fr}
+  .wmap-side{border-left:0;border-top:1px solid #e8e3d9;padding:22px 20px 20px}
+  #lmap{min-height:min(100vw,440px)}
+  .wmap-legend{left:8px;bottom:22px;padding:7px 9px;font-size:11px;gap:3px}
+  .wmap-legend em{display:none}
+  .wmap-ctrl{right:8px;top:8px}
+  .wm-lbl.pv{font-size:11.5px}
+  .wm-lbl.ds{font-size:11px}
+  .wm-big .en{font-size:38px}
+}
+.lg{display:inline-flex;align-items:center;gap:6px}
+.lg::before{content:"";width:10px;height:10px;border-radius:50%}
+.lg-cap::before{background:var(--ink);box-shadow:0 0 0 2px #fff,0 0 0 3px var(--ink)}
+.lg-site::before{background:var(--orange);box-shadow:0 0 0 3px rgba(255,107,0,.25)}
+.lg-note{font-size:12px;color:#ff9a52;font-weight:700}
+.facts{margin:16px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+.facts dt{font-size:12px;font-weight:700;color:var(--ink-soft)}
+.facts dd{margin:2px 0 0;font-weight:700;font-size:15px}
+@media (max-width:880px){.facts{grid-template-columns:1fr 1fr}}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;gap:8px;align-content:start}
+.why ul{margin:0;padding:0;display:contents}
+.why .tag{font-family:var(--f-display);font-weight:800;font-size:13px;color:var(--orange-deep)}
+.why h3{font-size:18px;font-weight:800;line-height:1.4}
+.why p{font-size:14.5px;color:var(--ink-soft)}
+.swipe-hint{display:none;align-items:center;gap:6px;margin-top:10px;font-size:12px;font-weight:700;color:var(--ink-soft)}
+.swipe-hint svg{width:16px;height:16px}
+
+/* how: real sequence */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:2px solid var(--ink)}
+.steps li{list-style:none;padding:22px 20px 4px 0;display:grid;gap:8px;align-content:start;position:relative}
+.steps ol{display:contents}
+.steps .n{font-family:var(--f-display);font-weight:900;font-size:40px;line-height:1;color:var(--orange);letter-spacing:-.04em}
+.steps h3{font-size:17px;font-weight:800;line-height:1.4}
+.steps p{font-size:14px;color:var(--ink-soft)}
+.steps .when{font-family:var(--f-display);font-weight:800;font-size:13px;color:var(--ink);letter-spacing:.02em}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;gap:8px;align-content:start}
+.pillar .tag{font-family:var(--f-display);font-weight:800;font-size:13px;color:var(--orange-deep)}
+.pillar h3{font-size:19px;font-weight:800;line-height:1.4}
+.pillar p{font-size:14.5px;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chips span{font-size:13px;font-weight:700;padding:4px 12px;border-radius:999px;background:#fff1e6;color:var(--orange-deep)}
+.sched-title{font-size:18px;font-weight:800;margin-bottom:14px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.sched-title small{font-family:var(--f-body);font-size:14px;font-weight:500;color:var(--ink-soft)}
+
+/* what we do: goal banner, two activity blocks, process flow */
+.goal-bar{display:flex;align-items:center;gap:18px;color:var(--ink);border-top:2px solid var(--ink);border-bottom:1px solid var(--line);padding:20px 4px;margin-bottom:40px}
+.gb-ic{flex:none;width:40px;height:40px;color:var(--orange)}
+.goal-bar p{font-size:clamp(15px,1.6vw,17px);font-weight:500;line-height:1.6}
+.goal-bar b{color:#c43d0c;font-weight:800;margin-right:10px}
+.act{margin-bottom:44px}
+.act-title{font-size:clamp(20px,2.4vw,26px);font-weight:900;color:var(--orange-deep);margin-bottom:18px;display:flex;gap:8px}
+.act-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:24px}
+.act-ph{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.act-ph img{display:block;width:100%;height:auto;aspect-ratio:981/630;object-fit:cover;border-radius:14px;max-width:100%}
+.act-ph figcaption{font-size:12.5px;color:var(--ink-soft)}
+.act-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;align-content:start;min-width:0}
+.act-list li{display:flex;align-items:center;gap:16px;background:#f0eee9;border-radius:14px;padding:14px 18px;min-height:68px}
+.act-list i{flex:none;width:44px;height:44px;border-radius:50%;background:var(--orange);display:grid;place-items:center}
+.act-list svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.act-list b{font-size:16px;font-weight:800;line-height:1.4}
+.act-list small{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
+/* desktop: the four rows share exactly the photo's height (caption hangs below the photo) */
+@media (min-width:901px){
+  .act{margin-bottom:64px}
+  .act-ph{position:relative;display:block}
+  .act-ph figcaption{position:absolute;left:0;right:0;top:100%;margin-top:8px}
+  /* both blocks share one row height: the uncropped photos are shown at the same height (set by the widest photo's ratio,
+     981×630) and each four-box list is exactly that tall */
+  .act-grid{container-type:inline-size}
+  .act-ph img{width:100%;height:calc((100cqw - 24px) * .46 / 1.557);max-width:100%;object-fit:cover}
+  .act-list{grid-auto-rows:1fr;gap:8px;height:calc((100cqw - 24px) * .46 / 1.557)}
+  .act-list li{min-height:0;padding:6px 16px;gap:14px}
+  .act-list i{width:40px;height:40px}
+  .act-list b{font-size:clamp(14px,1.35vw,16px)}
+  .act-list small{font-size:clamp(11.5px,1.05vw,12.5px);margin-top:1px}
+}
+.proc{margin-top:16px;padding-top:36px;border-top:1px solid var(--line)}
+.proc-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 12px;margin-bottom:26px}
+.proc-head h3{font-size:clamp(20px,2.4vw,24px);font-weight:900}
+.proc-head span{font-size:14px;color:var(--ink-soft)}
+.stages{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stage{position:relative;padding:4px 26px 8px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:14px;min-width:0}
+.stage:first-child{border-left:0;padding-left:0}
+.stage:not(:last-child)::after{content:"";position:absolute;top:16px;right:-9px;width:16px;height:16px;border-top:2px solid var(--orange);border-right:2px solid var(--orange);transform:rotate(45deg);background:var(--paper)}
+.st-top{display:flex;align-items:center;gap:12px}
+.st-no{font-family:Archivo,"Noto Sans KR",sans-serif;font-weight:800;font-size:30px;line-height:1;letter-spacing:-.03em;color:#c43d0c}
+.st-top b{display:block;font-size:20px;font-weight:900;line-height:1.2}
+.st-top i{font-style:normal;font-family:Archivo,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.stage h3{font-size:17px;font-weight:900;line-height:1.45;padding-top:14px;border-top:2px solid var(--ink)}
+.stage ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:14px}
+.stage ul li{padding-left:14px;position:relative;line-height:1.55}
+.stage ul li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.st-fig{margin-top:auto;display:flex;align-items:baseline;gap:6px}
+.st-fig b{font-family:Archivo,"Noto Sans KR",sans-serif;font-weight:800;font-size:30px;color:#c43d0c}
+.st-fig span{font-size:13px;color:var(--ink-soft)}
+@media (max-width:900px){
+  .act-grid{grid-template-columns:1fr}
+  .stages{grid-template-columns:1fr 1fr;row-gap:32px}
+  .stage:nth-child(3){border-left:0;padding-left:0}
+  .stage:nth-child(2)::after{display:none}
+}
+@media (max-width:560px){
+  .goal-bar{flex-direction:column;align-items:flex-start;gap:10px;padding:18px 2px}
+  .goal-bar b{display:block;margin:0 0 2px}
+  .act-list li{padding:12px 14px;gap:12px}
+  .act-list i{width:38px;height:38px}
+  .act-list b{font-size:15px}
+  /* process: swipeable cards instead of a tall stack */
+  .stages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-right:calc(-1 * var(--gut-r));padding-right:var(--gut-r);padding-bottom:6px;scrollbar-width:none}
+  .stages::-webkit-scrollbar{display:none}
+  .stage{flex:0 0 78%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+  .stage:first-child{padding-left:18px;border-left:1px solid var(--line)}
+  .stage:nth-child(3){padding-left:18px;border-left:1px solid var(--line)}
+  .stage::after{display:none}
+  .st-no{font-size:26px}
+  .proc .swipe-hint{display:flex}
+  .proc-head{margin-bottom:16px}
+  .hero .eyebrow .m-hide{display:none}
+  .gmap{display:inline-block;padding:8px 0}
+}
+
+/* impact ripple: one child → one family → a village → a region */
+.ripple{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.rp-stage{position:relative;min-width:0;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#fff3e8 0%,#fbf6ef 55%,#f6f0e6 100%)}
+.rp-stage canvas{display:block;width:100%;aspect-ratio:1/1;max-width:100%}
+.rp-count,.rp-who{display:none!important}
+.rp-count{position:absolute;left:16px;top:14px;display:flex;align-items:baseline;gap:6px;color:#252525}
+.rp-count b{font-family:Archivo,"Noto Sans KR",sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);color:#c43d0c;letter-spacing:-.02em}
+.rp-k{font-size:14px;font-weight:700;color:#6f6a60}
+.rp-who{position:absolute;right:16px;top:20px;font-weight:900;font-size:15px;color:#fff;background:#c43d0c;border-radius:999px;padding:5px 14px;transition:transform .3s}
+.rp-steps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:rs}
+.rp-steps button{width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:4px 14px;text-align:left;background:#f6f3ee;border:1px solid transparent;border-radius:14px;padding:12px 16px;cursor:pointer;font:inherit;color:inherit;transition:background .25s,border-color .25s}
+.rp-steps button:hover{border-color:#e8c9b0}
+.rp-steps .rs-dot{width:26px;height:26px;border-radius:50%;background:#e2dcd1;color:#fff;font-family:Archivo,sans-serif;font-weight:800;font-size:12px;display:grid;place-items:center;grid-row:span 2}
+.rp-steps .rs-g{font-weight:800;font-size:16px;grid-column:2}
+.rp-steps .rs-amt{font-size:13px;color:var(--ink-soft);grid-column:2}
+.rp-steps .rs-who{grid-row:1 / span 2;grid-column:3;font-weight:900;font-size:15px;color:#9a948a}
+.rp-steps button.on{background:#fff1e6;border-color:#f6b98a}
+.rp-steps button.on .rs-dot,.rp-steps button.done .rs-dot{background:var(--orange)}
+.rp-steps button.on .rs-who{color:#c43d0c}
+.rp-steps button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.rp-desc{margin:16px 2px 0;font-size:15.5px;line-height:1.7;color:#3a3a3a;min-height:3.4em}
+.rp-desc b{color:#c43d0c}
+.rp-replay{margin-top:10px;background:none;border:0;padding:6px 2px;font:inherit;font-size:13px;font-weight:700;color:#6f6a60;cursor:pointer}
+.rp-replay:hover{color:var(--orange)}
+@media (max-width:880px){
+  .ripple{grid-template-columns:1fr;padding:14px;gap:16px}
+  .rp-stage canvas{aspect-ratio:1/0.9}
+  .rp-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rp-steps li:last-child{grid-column:1 / -1}
+  .rp-steps button{grid-template-columns:auto 1fr;padding:10px 12px;gap:2px 10px}
+  .rp-steps .rs-who{grid-column:2;grid-row:auto;font-size:13px}
+  .rp-steps .rs-dot{grid-row:span 3;width:22px;height:22px;font-size:11px}
+  .rp-steps .rs-g{font-size:14.5px}
+  .rp-steps .rs-amt{font-size:12px}
+  .rp-desc{font-size:14.5px;margin-top:10px}
+}
+
+/* gift ladder */
+.gifts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.gift{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px;display:grid;gap:6px;align-content:start;min-width:0}
+.gift .amt{font-family:var(--f-display);font-weight:900;font-size:clamp(22px,2.6vw,28px);letter-spacing:-.03em;line-height:1.2}
+.gift .amt small{font-size:.55em;font-weight:700;margin-left:2px}
+.gift .eq{font-size:14px;color:var(--ink-soft)}
+.gift .eq b{color:var(--ink)}
+.gift.hl{background:var(--night);border-color:var(--night);color:var(--on-night)}
+.gift.hl .eq{color:var(--on-night-soft)}
+.gift.hl .eq b{color:var(--orange)}
+.gift .goat{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-bottom:6px;min-height:22px}
+.gift .goat svg{width:22px;height:22px;flex:none}
+.foot-note{margin-top:14px;font-size:13px;color:var(--ink-soft)}
+
+/* summary table */
+.summary{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.summary dl{margin:0;display:grid;grid-template-columns:150px 1fr}
+.summary dt,.summary dd{padding:16px 22px;border-top:1px solid var(--line);margin:0}
+.summary dt:first-of-type,.summary dd:first-of-type{border-top:0}
+.summary dt{font-weight:700;font-size:14px;color:var(--ink-soft);background:#faf9f7}
+.summary dd{font-size:15px;min-width:0}
+.summary dd .sub{display:block;font-size:13px;color:var(--ink-soft)}
+.tbd{display:inline-block;font-size:11px;font-weight:700;color:var(--orange-deep);border:1px solid currentColor;border-radius:999px;padding:0 8px;margin-left:6px;vertical-align:2px;line-height:1.6}
+
+/* closing band */
+/* closing: photo sits to the right (child + goat stay bright), copy on the open left side */
+.close{background:var(--night) url("img/closing.jpg") right 30%/auto 100% no-repeat;color:var(--on-night);text-align:left;position:relative}
+.close::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--night) 0,var(--night) calc(100% - 830px),rgba(20,23,31,.55) calc(100% - 700px),rgba(20,23,31,0) calc(100% - 520px)),linear-gradient(90deg,rgba(20,23,31,.9) 0%,rgba(20,23,31,.6) 36%,rgba(20,23,31,0) 58%),linear-gradient(0deg,rgba(20,23,31,.45) 0%,transparent 30%)}
+.close .wrap{position:relative;padding-block:110px 130px;display:grid;justify-items:start;gap:20px;min-height:600px;align-content:center}
+.close .wrap > *{max-width:520px}
+@media (min-width:881px){
+  .close .wrap > *{margin-left:clamp(24px,5vw,96px)}
+  .hero .wrap > .rv:first-child{margin-left:clamp(24px,5vw,96px)}
+  .hero .project{margin-bottom:clamp(36px,5vw,64px)}
+  .hero .wrap{max-width:1120px;grid-template-columns:minmax(0,1fr) 300px;gap:40px}
+  /* goal card hugs the right edge (90px clear of the scroll dots) so it stays off the child in the photo */
+  .hero .goal{margin-right:clamp(-500px, 650px - 50vw, 70px)}
+  .hero .lead{font-size:16px;max-width:none}
+}
+@media (min-width:1100px){.hero .lead{white-space:nowrap}}
+@media (max-width:880px){.br-d{display:none}}
+.close h2,.close p{text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.close h2{font-size:clamp(26px,4.4vw,42px);font-weight:900;line-height:1.3}
+.close h2 em{font-style:normal;color:var(--orange)}
+.close p{color:var(--on-night-soft);max-width:32em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--orange);color:#fff;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:18px;padding:18px 40px;border-radius:999px;border:0;cursor:pointer;box-shadow:0 10px 30px -10px rgba(255,107,0,.7);transition:background .2s,transform .2s}
+.btn:hover{background:var(--orange-deep);transform:translateY(-1px)}
+.btn:focus-visible,.top .mini:focus-visible,.fab:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn svg{width:18px;height:18px}
+.close .contact{font-size:13px;margin-top:8px}
+footer{background:var(--night);color:var(--on-night-soft);font-size:12px;border-top:1px solid rgba(255,255,255,.06)}
+footer .wrap{padding-block:22px 110px;display:flex;flex-wrap:wrap;gap:12px 20px;justify-content:space-between;align-items:center}
+footer .foot-brand{opacity:.85}
+
+/* scroll position dots */
+section[id]{scroll-margin-top:60px}
+.dots{position:fixed;z-index:65;right:calc(22px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px}
+.dots a{position:relative;display:block;width:10px;height:10px;border-radius:50%;background:rgba(128,132,146,.55);box-shadow:0 0 0 1px rgba(255,255,255,.25);transition:background .3s,transform .3s,box-shadow .3s}
+.dots a:hover{background:rgba(128,132,146,.9)}
+.dots a.on{background:var(--orange);transform:scale(1.35);box-shadow:0 0 0 4px rgba(255,107,0,.25),0 0 12px rgba(255,107,0,.7)}
+.dots a span{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:12px;font-weight:700;color:#fff;background:var(--night);padding:4px 10px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s}
+.dots a:hover span,.dots a:focus-visible span{opacity:1}
+.dots a:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+@media (max-width:767px){.dots{display:none}}
+
+/* floating donate */
+.fab{position:fixed;z-index:70;right:calc(24px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:10px;background:var(--orange);color:#fff;text-decoration:none;font-family:var(--f-display);font-weight:800;font-size:17px;padding:16px 28px;border-radius:999px;box-shadow:0 14px 34px -8px rgba(224,85,0,.65),0 2px 6px rgba(0,0,0,.15);transition:background .2s,transform .2s}
+.fab:hover{background:var(--orange-deep);transform:translateY(-2px)}
+.fab .pulse{width:8px;height:8px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+
+.toast{position:fixed;left:50%;bottom:calc(100px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;background:var(--ink);color:#fff;font-size:14px;padding:12px 20px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:calc(100vw - 40px);text-align:center}
+
+/* reveal: visible at rest, gentle lift only when JS opts in */
+.js .rv{transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.js .rv.pre{transform:translateY(16px);opacity:.35}
+
+@media (max-width:880px){
+  .hero{background-position:58% 0;background-size:auto min(118vw,640px);background-color:var(--night)}
+  .hero::after{background:linear-gradient(180deg,rgba(20,23,31,0) 0,rgba(20,23,31,0) min(60vw,340px),rgba(20,23,31,.72) min(96vw,540px),var(--night) min(118vw,640px))}
+  .hero .wrap{grid-template-columns:1fr;gap:32px;padding-block:min(72vw,420px) 48px;min-height:0}
+  .photo.wide{aspect-ratio:16/9}
+  .close{background-position:right 0;background-size:auto min(92vw,560px)}
+  .close::before{background:linear-gradient(180deg,rgba(20,23,31,0) 0,rgba(20,23,31,0) min(56vw,340px),rgba(20,23,31,.8) min(80vw,480px),var(--night) min(92vw,560px))}
+  .close .wrap{min-height:0;padding-top:min(72vw,440px)}
+  .why{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;row-gap:8px}
+  .gifts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  body{font-size:15px}
+  section.blk{padding-block:52px}
+  .brand{gap:8px}
+  .brand .lg-gbf{height:28px}
+  .brand .lg-wv{height:17px}
+  .top .mini{display:none}
+  .top .wrap{height:54px}
+  .brand .lg-gbf{height:26px}
+  .brand .lg-wv{height:18px}
+  .hero .eyebrow{font-size:11px;letter-spacing:.12em;line-height:1.7}
+  .hero .lead{font-size:15px}
+  .goal{padding:20px 18px 18px;gap:14px}
+  .sec-head{margin-bottom:22px}
+  /* why: swipeable cards to keep the page short */
+  .why{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-right:calc(-1 * var(--gut-r));padding-right:var(--gut-r);padding-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .why::-webkit-scrollbar{display:none}
+  .why li{flex:0 0 78%;scroll-snap-align:start}
+  .swipe-hint{display:flex}
+  .photo.wide{aspect-ratio:16/10;border-radius:14px}
+  .pillar .ph{aspect-ratio:16/9}
+  .pillar{padding:20px}
+  .pillar .ph{margin:-20px -20px 8px;max-width:calc(100% + 40px)}
+  .gift{padding:18px 16px}
+  .gift .goat svg{width:18px;height:18px}
+  .facts dd{font-size:14px}
+  .summary dd{font-size:14px}
+  .close h2{font-size:26px}
+  .steps{grid-template-columns:1fr;border-top:0}
+  .steps li{border-top:1px solid var(--line);padding:18px 0 10px;grid-template-columns:48px 1fr;column-gap:8px}
+  .steps li .n{grid-row:span 3;font-size:32px}
+  .pillars{grid-template-columns:1fr}
+  .summary dl{grid-template-columns:96px 1fr}
+  .summary dt,.summary dd{padding:14px 14px}
+  .fab{left:calc(16px + env(safe-area-inset-left,0px));right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));justify-content:center;padding:17px 20px;font-size:17px}
+  .close .wrap{padding-bottom:110px}
+  .btn{width:100%;max-width:360px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv,.js .rv.pre{transition:none;transform:none;opacity:1}
+  .fab .pulse{animation:none}
+}
+</style>
+
+<!-- 수정 포인트: 아래 <script>의 CAMPAIGN 설정값만 바꾸면 국가·예산·기간·후원 링크가 페이지 전체에 반영됩니다. -->
+
+<header class="top">
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <div class="wrap">
+    <div class="brand"><img class="lg-gbf" src="img/logo-gbf.png" alt="헤럴드 GBF Global Biz Forum"><span class="x">×</span><img class="lg-wv" src="img/logo-wv.png" alt="월드비전 World Vision"></div>
+    <nav class="topnav" aria-label="섹션 메뉴">
+      <a href="#summary" data-sec="summary"><span class="nn">01</span>사업 개요</a>
+      <a href="#where" data-sec="where"><span class="nn">02</span>사업 국가</a>
+      <a href="#why" data-sec="why"><span class="nn">03</span>필요성</a>
+      <a href="#how" data-sec="how"><span class="nn">04</span>사업 내용</a>
+      <a href="#gift" data-sec="gift"><span class="nn">05</span>후원 효과</a>
+      <a href="#donate" data-sec="donate"><span class="nn">06</span>함께하기</a>
+    </nav>
+    <a class="mini donate-link" href="#donate">후원하기</a>
+  </div>
+</header>
+
+<nav class="dots" aria-label="섹션 이동">
+  <a href="#top" data-sec="top"><span>캠페인 소개</span></a>
+  <a href="#summary" data-sec="summary"><span>사업 개요</span></a>
+  <a href="#where" data-sec="where"><span>사업 국가</span></a>
+  <a href="#why" data-sec="why"><span>왜 필요한가요</span></a>
+  <a href="#how" data-sec="how"><span>무엇을 하나요</span></a>
+  <a href="#gift" data-sec="gift"><span>나의 후원이 만드는 변화</span></a>
+  <a href="#donate" data-sec="donate"><span>함께해 주세요</span></a>
+</nav>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="rv">
+      <p class="project" aria-label="GBF 1004 PROJECT"><span class="p-gbf">GBF</span> <span class="p-num">1004</span> <span class="p-word">PROJECT</span></p>
+      <div class="eyebrow"><span data-k="year"></span> <span data-k="country"></span> 염소지원사업<span class="m-hide"> · 염소 1,004마리, 천사의 나눔</span></div>
+      <h1>염소 두 마리가<br>한 가정의 <em>내일</em>을 바꿉니다</h1>
+      <p class="lead">기후위기와 빈곤으로 끼니를 걱정하는 <b data-k="country"></b> 취약가정에 <b>염소 <span data-k="goats"></span>마리</b>를 지원하고,<br class="br-d"> 질병관리부터 판매까지 사육 교육을 함께 제공합니다.<br class="br-d"> 염소가 새끼를 낳으면 가정에 소득과 영양이 생깁니다.</p>
+    </div>
+    <aside class="goal rv" aria-label="캠페인 목표">
+      <div>
+        <div class="lbl">헤럴드 GBF 모금 목표</div>
+        <div class="big num"><span data-k="budgetKor" style="margin:0;font-size:1em;color:inherit;font-weight:900"></span><span>원</span></div>
+      </div>
+      <dl>
+        <dt>지원 염소</dt><dd class="num"><span data-k="goats"></span>마리</dd>
+        <dt>지원 가정</dt><dd class="num">약 <span data-k="families"></span>가정</dd>
+        <dt>수혜 인원</dt><dd class="num">약 <span data-k="people"></span>명</dd>
+      </dl>
+      <p class="note">* 모든 행정비 포함 · 수량은 현지 물가에 따라 변동 가능</p>
+    </aside>
+  </div>
+</section>
+
+<main>
+  <section class="blk" id="summary">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow lined">Program Overview</div>
+        <h2>한눈에 보는 사업</h2>
+      </div>
+      <div class="summary rv">
+        <dl>
+          <dt>사업명</dt><dd><span data-k="name"></span></dd>
+          <dt>국가 / 지역</dt><dd><span data-k="country"></span> · <span data-k="region"></span><span class="tbd" data-tbd="region">확정 예정</span></dd>
+          <dt>사업 기간</dt><dd><span data-k="period"></span><span class="tbd" data-tbd="period">변동 가능</span><span class="sub">사업비 확보 시점에 따라 착수일이 조정될 수 있습니다</span></dd>
+          <dt>사업 내용</dt><dd>염소 <span class="num" data-k="goats"></span>마리 지원 + 수혜자 사육 교육<span class="sub">교육: 질병관리 · 번식 · 판매(마케팅) · 축사</span></dd>
+          <dt>지원 대상</dt><dd>약 <span class="num" data-k="families"></span>가정 · <span class="num" data-k="people"></span>명<span class="sub">영양실조 아동, 임산부·수유부, 장애인, 여성·아동 가장 가구 우선</span></dd>
+          <dt>총 사업비</dt><dd><b class="num" data-k="budgetFull"></b><span class="sub">모든 행정비 포함</span></dd>
+          <dt>수행 기관</dt><dd>월드비전<span class="sub"><span data-k="country"></span> 월드비전 현장 사업장과 함께 진행</span></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="where">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow lined">Where We Work</div>
+        <h2>아프리카 남부의 내륙국, <span data-k="country"></span></h2>
+      </div>
+      <div class="wmap rv">
+        <div class="wmap-stage" id="wmapStage">
+          <div id="lmap" role="region" aria-label="짐바브웨 지도와 행정구역 경계"></div>
+          <p class="wmap-msg" id="wmapMsg">지도를 불러오는 중…</p>
+          <div class="wmap-legend" aria-hidden="true">
+            <span data-lv="0"><i></i>국가 경계</span>
+            <span data-lv="1"><i class="pv"></i>주 <em>Province · 10</em></span>
+            <span data-lv="2"><i class="ds"></i>구 <em>District · 91</em></span>
+            <span data-lv="3"><i class="wd"></i>하위구 <em>Ward · 1,961</em></span>
+          </div>
+          <div class="wmap-ctrl">
+            <button type="button" class="wbtn" id="btnAll">아프리카</button>
+            <button type="button" class="wbtn on" id="btnZim">짐바브웨 전체</button>
+            <button type="button" class="wbtn site" id="btnSite" hidden>사업 지역</button>
+          </div>
+        </div>
+        <aside class="wmap-side">
+          <div class="eyebrow">사업 국가</div>
+          <p class="wm-big"><span class="en">Zimbabwe</span><span class="ko" data-k="country"></span></p>
+          <p class="wm-desc">아프리카 남부의 내륙국으로, 잠비아·모잠비크·남아공·보츠와나와 국경을 맞대고 있습니다.</p>
+          <dl class="wm-facts">
+            <div><dt>수도</dt><dd>하라레 (Harare)</dd></div>
+            <div><dt>사업 지역</dt><dd id="siteList">확정 예정</dd></div>
+            <div><dt>지원 규모</dt><dd>염소 <span data-k="goats"></span>마리</dd></div>
+            <div class="pick"><dt>선택한 지역</dt><dd id="wmPick">지도에서 지역을 눌러 보세요</dd></div>
+          </dl>
+          <p class="wm-hint" id="wmapHint">주를 누르면 구가, 구를 누르면 하위구(Ward)까지 확대돼요. 마우스 휠로 확대·축소할 수 있어요.</p>
+          <a class="gmap" href="https://www.google.com/maps/place/Zimbabwe" target="_blank" rel="noopener">Google 지도에서 보기 ↗</a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="why">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow lined">Why It Matters</div>
+        <h2>비가 오지 않으면, 아이들의 밥상이 비어갑니다</h2>
+        <p class="lines">반복되는 가뭄으로 농사만으로는 가족을 먹이기 어렵습니다.<br class="br-d"> 기댈 수 있는 생계 자산이 없는 가정일수록 여성과 아이들이 가장 먼저 위험해집니다.</p>
+      </div>
+      <figure class="photo wide rv"><img src="img/drought.jpg" alt="가뭄으로 말라버린 옥수수밭" loading="lazy"><figcaption>가뭄으로 말라버린 농경지</figcaption></figure>
+      <div class="why">
+        <ul>
+          <li class="rv"><span class="tag">영양 부족</span><h3>식량이 모자라 아이들이 영양실조 위험에</h3><p>수확량이 줄면서 충분하고 영양가 있는 음식을 먹지 못하는 가구가 늘고 있습니다.</p></li>
+          <li class="rv"><span class="tag">취약한 생계</span><h3>기댈 수 있는 소득원과 생계 자산 부족</h3><p>가축 같은 생산 자산이 없어 흉년이 들면 가계가 그대로 무너집니다.</p></li>
+          <li class="rv"><span class="tag">기후 위기</span><h3>빈곤과 기후위기가 겹친 여성·아동 가장</h3><p>여성이나 아동이 가장인 가정, 임산부와 장애인이 있는 가정이 가장 큰 영향을 받습니다.</p></li>
+        </ul>
+      </div>
+      <p class="swipe-hint" aria-hidden="true">옆으로 넘겨 보세요 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+    </div>
+  </section>
+
+  <section class="blk" id="how">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow lined">What We Do</div>
+        <h2>염소 <span data-k="goats"></span>마리 지원과 사육 교육</h2>
+      </div>
+
+      <div class="goal-bar rv">
+        <svg class="gb-ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="24" cy="24" r="20"/><circle cx="24" cy="24" r="12"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
+        <p><b>사업목표</b>취약가정에 염소를 지원함으로써 가계소득과 식량안보를 개선하고 지속가능한 생계 기반을 강화합니다.</p>
+      </div>
+
+      <div class="act rv">
+        <h3 class="act-title"><span class="act-no">1.</span>염소 지원을 통한 취약가정 소득 증대</h3>
+        <div class="act-grid">
+          <figure class="act-ph"><img src="img/distribution.jpg" width="981" height="630" alt="주민들에게 염소를 배분하는 모습" loading="lazy"><figcaption>염소 배분 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
+          <ul class="act-list">
+            <li><i><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></i><div><b>수혜 가구 선정 및 참여 협약 체결</b></div></li>
+            <li><i><svg viewBox="0 0 24 24"><path d="M5 9c0-2 1.5-3 3-3h7l3 3v4l-2 1v5M8 6 6 3M15 6l2-3M8 13v6M12 13v6M5 9l-2 2"/></svg></i><div><b>취약계층 가구 대상 염소 <span data-k="goats"></span>마리 지원</b><small>* 지원 수량은 사업예산 및 현지 물가에 따라 변동될 수 있음</small></div></li>
+            <li><i><svg viewBox="0 0 24 24"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></i><div><b>현지 조달·입찰을 통한 염소 구매 및 운송·배송</b></div></li>
+            <li><i><svg viewBox="0 0 24 24"><path d="m18 2 4 4M15 5l4 4M17 7 7 17l-3 1 1-3L15 5M9 11l4 4M2 22l3-3"/></svg></i><div><b>가축 생존율 향상을 위한 구충·필수 백신 접종</b></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="act rv">
+        <h3 class="act-title"><span class="act-no">2.</span>사육 교육을 통한 생계역량 강화</h3>
+        <div class="act-grid">
+          <figure class="act-ph"><img src="img/training.jpg" width="1054" height="703" alt="마을 주민들이 모여 교육을 받는 모습" loading="lazy"><figcaption>주민 교육 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
+          <ul class="act-list">
+            <li><i><svg viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg></i><div><b>염소 사육 기초 교육</b><small>질병관리 · 번식</small></div></li>
+            <li><i><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 11l2 2 4-4M9 17h6"/></svg></i><div><b>현장 사육 실습 교육</b><small>기록 관리 · 사료 · 질병 예방</small></div></li>
+            <li><i><svg viewBox="0 0 24 24"><path d="M3 21h18M6 17V11M11 17V7M16 17v-4M20 5l-5 5-3-3-5 5"/></svg></i><div><b>판매(마케팅) 교육</b><small>염소와 새끼 염소를 소득으로 연결</small></div></li>
+            <li><i><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-5h4v5"/></svg></i><div><b>축사 관리 교육</b><small>안전하고 위생적인 사육 환경 조성</small></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="proc rv">
+        <div class="proc-head"><h3>사업 프로세스</h3><span>이런 순서로 진행됩니다</span></div>
+        <ol class="stages">
+          <li class="stage">
+            <div class="st-top"><span class="st-no">01</span><div><b>준비</b><i>Prepare</i></div></div>
+            <h3>지역 설명회와 <br>수혜 가구 선정</h3>
+            <ul><li>마을 단위 지역 설명회 개최</li><li>취약가정 선정 · 참여 협약</li><li>염소 사육 기초 교육</li></ul>
+          </li>
+          <li class="stage">
+            <div class="st-top"><span class="st-no">02</span><div><b>지원</b><i>Deliver</i></div></div>
+            <h3>염소 조달과 <br>가정별 배분</h3>
+            <ul><li>현지 조달 · 입찰</li><li>도착 즉시 구충 · 백신 접종</li><li>수혜 가구별 염소 배분</li></ul>
+            <div class="st-fig"><b class="num" data-k="goats"></b><span>마리 지원</span></div>
+          </li>
+          <li class="stage">
+            <div class="st-top"><span class="st-no">03</span><div><b>교육</b><i>Train</i></div></div>
+            <h3>현장 중심의 <br>사육 실습 교육</h3>
+            <ul><li>기록 관리 · 사료</li><li>질병 예방 · 번식</li><li>판매(마케팅) · 축사 관리</li></ul>
+          </li>
+          <li class="stage">
+            <div class="st-top"><span class="st-no">04</span><div><b>정착</b><i>Sustain</i></div></div>
+            <h3>점검과 <br>농가 모니터링</h3>
+            <ul><li>배분 후 염소 상태 점검</li><li>농가별 사육 현황 모니터링</li><li>자립 기반 정착 지원</li></ul>
+            <div class="st-fig"><span>약</span><b class="num" data-k="families"></b><span>가정 자립</span></div>
+          </li>
+        </ol>
+        <p class="swipe-hint" aria-hidden="true">옆으로 넘겨 보세요 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk" id="gift">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow lined">Your Impact</div>
+        <h2>염소가 늘어날수록, 변화는 더 멀리 퍼집니다</h2>
+      </div>
+      <div class="ripple rv" id="ripple">
+        <div class="rp-stage">
+          <canvas id="rpcv" role="img" aria-label="염소 수가 늘어날수록 한 아이, 한 가정, 작은 마을, 한 지역으로 변화가 퍼지는 그림"></canvas>
+          <div class="rp-count" aria-live="polite"><span class="rp-k">염소</span><b class="num" id="rpGoats">1</b><span class="rp-k">마리</span></div>
+          <div class="rp-who" id="rpWho">한 아이</div>
+        </div>
+        <div class="rp-side">
+          <ol class="rp-steps" id="rpSteps"></ol>
+          <p class="rp-desc" id="rpDesc"></p>
+          <button type="button" class="rp-replay" id="rpReplay">↻ 처음부터 다시 보기</button>
+        </div>
+      </div>
+      <p class="foot-note">* 염소 1마리 후원금에는 염소 구입·운송·배송비, 백신 접종 및 구충, 수혜자 사육 교육, 사업운영비 및 행정비가 모두 포함됩니다.</p>
+    </div>
+  </section>
+
+</main>
+
+<section class="close" id="donate">
+  <div class="wrap rv">
+    <div class="eyebrow lined">Join Us</div>
+    <h2>아이들의 건강한 성장과<br>미래를 여는 <em>첫 출발</em>에<br>함께해 주세요</h2>
+    <p>헤럴드 GBF 회원 한 분 한 분의 나눔이 모여<br> <span data-k="country"></span>의 마을에 염소와 희망을 전합니다.</p>
+    <a class="btn donate-link" href="#donate" target="_blank" rel="noopener">
+      후원하기
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="contact">한국월드비전<br>서울시 영등포구 여의나루로 77-1 (07327)</p>
+  </div>
+</section>
+
+<a class="fab donate-link" href="#donate" target="_blank" rel="noopener" aria-label="후원하기"><span class="pulse" aria-hidden="true"></span>후원하기</a>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+/* ===== 캠페인 설정: 이 값만 수정하세요 ===== */
+var CAMPAIGN = {
+  year: "2027",
+  country: "짐바브웨",
+  region: "세부 지역 미정",
+  regionConfirmed: false,
+  period: "2027년 1월 ~ 11월 (약 11개월)",
+  periodConfirmed: false,
+  budget: 110440000,        // 모금 목표 / 총 사업비(원), 행정비 포함
+  goats: 1004,              // 지원 염소 수 (1마리 후원금 = budget ÷ goats)
+  goatsPerFamily: 2,
+  peoplePerFamily: 5,
+  donateUrl: "",            // 후원하기 페이지 링크가 나오면 여기에 입력
+  // 사업 지역: 확정되면 지도에 주황색 핀으로 표시됩니다. 여러 곳 입력 가능.
+  // 예) { name: "마니칼랜드주 치마니마니", lat: -19.80, lon: 32.87 }
+  // 구(District) 이름을 넣으면 그 구역 전체가 주황색으로 표시됩니다. 예) { name: "치마니마니", district: "Chimanimani" }
+  regions: []
+};
+/* ========================================= */
+
+(function(){
+  var c = CAMPAIGN;
+  var goats = c.goats;
+  c.perGoat = Math.round(c.budget / goats);
+  var families = Math.floor(goats / c.goatsPerFamily);
+  var people = families * c.peoplePerFamily;
+  var fmt = function(n){ return n.toLocaleString("ko-KR"); };
+  var kor = function(n){
+    var eok = Math.floor(n / 1e8), man = Math.round((n % 1e8) / 1e4);
+    var s = "";
+    if (eok) s += eok + "억";
+    if (man) s += (s ? " " : "") + (man % 1000 === 0 ? (man/1000) + "천만" : fmt(man) + "만");
+    else if (!eok) s = fmt(n);
+    return s || fmt(n);
+  };
+  var vals = {
+    year: c.year, country: c.country, region: c.region, period: c.period,
+    name: c.year + " " + c.country + " 염소지원사업",
+    goats: fmt(goats), families: fmt(families), people: fmt(people),
+    budgetKor: kor(c.budget), perGoatKor: (c.perGoat % 10000 === 0 ? fmt(c.perGoat / 10000) + "만" : fmt(c.perGoat)), budgetFull: fmt(c.budget) + "원 (" + kor(c.budget) + "원)"
+  };
+  document.querySelectorAll("[data-k]").forEach(function(el){
+    var v = vals[el.getAttribute("data-k")]; if (v != null) el.textContent = v;
+  });
+  if (c.regionConfirmed) document.querySelectorAll('[data-tbd="region"]').forEach(function(e){ e.hidden = true; });
+  if (c.periodConfirmed) document.querySelectorAll('[data-tbd="period"]').forEach(function(e){ e.hidden = true; });
+
+  // impact ripple: as the goat count grows the camera pulls back from one child to a whole region
+  (function(){
+    var per = c.goatsPerFamily, ppl = c.peoplePerFamily;
+    var stages = [
+      {g: 1, who: "한 아이", desc: "염소 <b>1마리</b>가 들어오면, 염소젖과 새끼 염소로 <b>한 아이</b>의 식탁에 영양이 더해집니다."},
+      {g: per, who: "한 가정", desc: "암염소 <b>" + per + "마리</b>가 새끼를 낳으며, <b>" + ppl + "명</b> 가족의 든든한 소득원이 됩니다."},
+      {g: per * 10, who: "이웃", desc: "염소 <b>" + (per * 10) + "마리</b>면 이웃 <b>10가정, " + (10 * ppl) + "명</b>의 생계가 함께 단단해집니다."},
+      {g: per * 100, who: "작은 마을", desc: "염소 <b>" + (per * 100) + "마리</b>면 <b>100가정, " + fmt(100 * ppl) + "명</b>이 사는 작은 마을 하나가 함께 일어섭니다."},
+      {g: goats, who: "한 지역", desc: "염소 <b>" + fmt(goats) + "마리</b>가 모이면 <b>" + fmt(families) + "가정, " + fmt(people) + "명</b>이 자립의 첫걸음을 내딛습니다."}
+    ];
+    var list = document.getElementById("rpSteps"), desc = document.getElementById("rpDesc"), whoEl = document.getElementById("rpWho"), cntEl = document.getElementById("rpGoats");
+    list.innerHTML = stages.map(function(s, i){
+      var amt = i === stages.length - 1 ? c.budget : s.g * c.perGoat;
+      return '<li><button type="button" data-i="' + i + '"><span class="rs-dot">' + (i + 1) + '</span><span class="rs-g">염소 ' + fmt(s.g) + '마리</span><span class="rs-amt">' + fmt(amt) + '원</span><span class="rs-who">' + s.who + '</span></button></li>';
+    }).join("");
+    var btns = [].slice.call(list.querySelectorAll("button"));
+    var cv = document.getElementById("rpcv"), ctx = cv.getContext && cv.getContext("2d");
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var W = 0, H = 0, dpr = 1, p = 0, target = 1, raf = 0, timer = 0, idx = 0, T = 0;
+    var LAST = stages.length - 1;
+    function clamp(x){ return Math.max(0, Math.min(1, x)); }
+    function smooth(x){ x = clamp(x); return x * x * (3 - 2 * x); }
+    var rnd = (function(s){ return function(){ s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; })(1004);
+
+    /* Storybook scene in world units: nested hills (ellipses) share one bottom edge, like a picture book page.
+       E[k] is the hill for stage k; its people, huts and goats stand in the band just above the next hill in. */
+    var CY = 600, CX = 500; // every hill is centred here, so the story grows outward from the child in the middle
+    var E = [{rx: 250, ry: 180}, {rx: 385, ry: 305}, {rx: 530, ry: 450}, {rx: 720, ry: 640}, {rx: 1000, ry: 900}];
+    var HILL = ["#fdeedc", "#fbe2c3", "#f7d5a9", "#f3c991", "#efbd7c"];
+    var top = function(k){ return CY - E[k].ry; };
+    var SKIN = ["#7b4a2c", "#8d5634", "#6a3d24", "#9a6440"], SHIRT = ["#f4a62a", "#f26b2a", "#5b9bd5", "#7fae3c", "#f6c445", "#e2553b"], WRAP = ["#f08a1c", "#e4572e", "#f6c445"];
+    function pick(a, i){ return a[i % a.length]; }
+    // people for each band: [x, baseY, height, skin, shirt, wrap?]
+    var fam = [[455, 118, 0, 9, -1, 4], [575, 116, 1, 0, 0, 4], [515, 84, 2, 1, -1, 30]];
+    // y of the crest of hill k at x (things standing on hill k+1 are placed just above it so hill k hides their feet)
+    function surf(k, x){ var e = E[k], u = (x - CX) / e.rx; return Math.abs(u) >= 1 ? CY : CY - e.ry * Math.sqrt(1 - u * u); }
+    // scatter homes / goats / trees over the ring between hill k-1 and hill k (skipping the crest where people stand)
+    function ring(k, n, skipCrest){
+      var out = [], e = E[k], ei = E[k - 1], tries = 0;
+      while (out.length < n && tries++ < n * 40){
+        var x = CX + (rnd() * 2 - 1) * e.rx, y = CY + (rnd() * 2 - 1) * e.ry, dx = (x - CX), dy = (y - CY);
+        if ((dx * dx) / (e.rx * e.rx * .86) + (dy * dy) / (e.ry * e.ry * .86) > 1) continue;
+        if ((dx * dx) / (ei.rx * ei.rx * 1.12) + ((dy - 10) * (dy - 10)) / (ei.ry * ei.ry * 1.12) < 1) continue;
+        if (skipCrest && y < CY && y > surf(k - 1, x) - 110) continue;
+        out.push([x, y, rnd() < .45 ? "h" : rnd() < .55 ? "g" : "t", .6 + rnd() * .5]);
+      }
+      return out.sort(function(a, b){ return a[1] - b[1]; });
+    }
+    fam = fam.map(function(d){ return [d[0], surf(0, d[0]) + d[5], d[1], d[2], d[3], d[4]]; });
+    var nbr = [[300, 0, 0, 0, 108], [372, 1, 4, -1, 84], [446, 2, 2, -1, 114], [516, 0, 1, -1, 80], [588, 3, 5, -1, 100], [660, 1, 3, -1, 110]].map(function(d){ return [d[0], surf(1, d[0]) + 8 + (d[4] < 90 ? 10 : 0), d[4], d[1], d[2], d[3]]; });
+    var vil = []; for (var i = 0; i < 16; i++){ var vx0 = 140 + i * 46 + (i % 2) * 8; vil.push([vx0, surf(2, vx0) + 4, 58 + (i % 4) * 6, i, i + 2, i % 3 === 0 ? i : -1]); }
+    var vilHuts = [60, 150, 250, 350, 650, 760, 860, 950].map(function(x, n){ return [x, surf(2, x) - 46 - (n % 2) * 26]; });
+    var vilTrees = [100, 440, 590, 900].map(function(x){ return [x, surf(2, x) - 64]; });
+    var vilGoats = [180, 300, 380, 620, 700, 820].map(function(x){ return [x, surf(2, x) + 6]; });
+    var town = ring(3, 70, true), reg = ring(4, 300, false);
+    var clouds = [[150, 330, .9], [800, 300, .8], [60, 140, 1.2], [880, 120, 1.1], [-100, -120, 1.6], [960, -180, 1.5], [-300, 1200, 1.8], [1150, 1150, 1.6]];
+
+    function blob(x, y, r, col){ ctx.fillStyle = col; ctx.beginPath(); ctx.arc(x, y, r, 0, 7); ctx.fill(); }
+    function cloud(x, y, s){ ctx.globalAlpha *= .9; blob(x, y, 26 * s, "#fffaf2"); blob(x + 30 * s, y - 10 * s, 32 * s, "#fffaf2"); blob(x + 64 * s, y, 24 * s, "#fffaf2"); ctx.fillRect(x, y, 64 * s, 24 * s); }
+    function bush(x, y, s){ blob(x - 14 * s, y, 14 * s, "#8fbf4f"); blob(x + 4 * s, y - 8 * s, 18 * s, "#a3cc5f"); blob(x + 22 * s, y, 13 * s, "#8fbf4f"); }
+    function tree(x, y, s){
+      ctx.strokeStyle = "#8a5a34"; ctx.lineCap = "round"; ctx.lineWidth = 9 * s;
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y - 70 * s); ctx.moveTo(x, y - 50 * s); ctx.lineTo(x - 28 * s, y - 92 * s); ctx.moveTo(x, y - 55 * s); ctx.lineTo(x + 30 * s, y - 95 * s); ctx.stroke();
+      ctx.fillStyle = "#93b94a"; ctx.beginPath(); ctx.ellipse(x, y - 102 * s, 78 * s, 20 * s, 0, 0, 7); ctx.fill();
+      ctx.fillStyle = "#a9cc5c"; ctx.beginPath(); ctx.ellipse(x - 8 * s, y - 112 * s, 56 * s, 14 * s, 0, 0, 7); ctx.fill();
+    }
+    function hut(x, y, s){
+      ctx.fillStyle = "#d8a46e"; ctx.strokeStyle = "#b9824e"; ctx.lineWidth = 2 * s;
+      ctx.beginPath(); ctx.moveTo(x - 40 * s, y); ctx.lineTo(x - 40 * s, y - 46 * s); ctx.lineTo(x + 40 * s, y - 46 * s); ctx.lineTo(x + 40 * s, y); ctx.closePath(); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = "#7a5236"; ctx.beginPath(); ctx.moveTo(x - 10 * s, y); ctx.lineTo(x - 10 * s, y - 22 * s); ctx.arc(x, y - 22 * s, 10 * s, Math.PI, 0); ctx.lineTo(x + 10 * s, y); ctx.fill();
+      ctx.fillStyle = "#eab95e"; ctx.strokeStyle = "#c8943c"; ctx.beginPath(); ctx.moveTo(x - 58 * s, y - 40 * s); ctx.quadraticCurveTo(x, y - 112 * s, x + 58 * s, y - 40 * s); ctx.quadraticCurveTo(x, y - 52 * s, x - 58 * s, y - 40 * s); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); for (var k = -2; k <= 2; k++){ ctx.moveTo(x + k * 18 * s, y - 46 * s); ctx.lineTo(x + k * 6 * s, y - 86 * s); } ctx.stroke();
+      ctx.fillStyle = "#c8943c"; ctx.beginPath(); ctx.arc(x, y - 92 * s, 5 * s, 0, 7); ctx.fill();
+    }
+    function goat(x, y, s, dir, bob){
+      var d = dir || 1, hy = bob || 0;
+      ctx.save(); ctx.translate(x, y); ctx.scale(d * s, s);
+      ctx.strokeStyle = "#d8c8b2"; ctx.lineWidth = 2; ctx.fillStyle = "#fffaf3";
+      [-26, -12, 12, 24].forEach(function(lx){ ctx.fillRect(lx - 3, -6, 6, 34); });
+      ctx.fillStyle = "#b98a62"; [-26, -12, 12, 24].forEach(function(lx){ ctx.fillRect(lx - 3, 26, 6, 4); });
+      ctx.fillStyle = "#fffaf3"; ctx.beginPath(); ctx.ellipse(0, -14, 40, 22, 0, 0, 7); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-38, -22); ctx.lineTo(-48, -32); ctx.lineWidth = 5; ctx.strokeStyle = "#fffaf3"; ctx.stroke();
+      ctx.save(); ctx.translate(34, -30 + hy);
+      ctx.strokeStyle = "#a9794f"; ctx.lineWidth = 5; ctx.lineCap = "round"; ctx.beginPath(); ctx.moveTo(0, -14); ctx.quadraticCurveTo(-6, -30, -18, -26); ctx.stroke();
+      ctx.fillStyle = "#fffaf3"; ctx.strokeStyle = "#d8c8b2"; ctx.lineWidth = 2; ctx.beginPath(); ctx.ellipse(8, -4, 16, 13, .35, 0, 7); ctx.fill(); ctx.stroke();
+      ctx.beginPath(); ctx.ellipse(-8, -8, 11, 5, -.5, 0, 7); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = "#3b2a20"; ctx.beginPath(); ctx.arc(10, -7, 2.4, 0, 7); ctx.fill();
+      ctx.fillStyle = "#f2b8a0"; ctx.beginPath(); ctx.arc(20, 2, 2.6, 0, 7); ctx.fill();
+      ctx.restore();
+      ctx.strokeStyle = "#ef6a1f"; ctx.lineWidth = 5; ctx.beginPath(); ctx.moveTo(26, -28); ctx.lineTo(34, -12); ctx.stroke();
+      ctx.restore();
+    }
+    function person(x, y, h, sk, sh, wr, bob){
+      var by = y + (bob || 0), hr = h * .2, hy = by - h * .74;
+      ctx.fillStyle = sh; ctx.beginPath(); ctx.moveTo(x - h * .34, y + 4); ctx.lineTo(x - h * .3, by - h * .38); ctx.quadraticCurveTo(x - h * .26, by - h * .52, x, by - h * .52); ctx.quadraticCurveTo(x + h * .26, by - h * .52, x + h * .3, by - h * .38); ctx.lineTo(x + h * .34, y + 4); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = sk; ctx.fillRect(x - h * .06, by - h * .58, h * .12, h * .1);
+      ctx.beginPath(); ctx.arc(x, hy, hr, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.arc(x - hr * .98, hy + hr * .1, hr * .2, 0, 7); ctx.arc(x + hr * .98, hy + hr * .1, hr * .2, 0, 7); ctx.fill();
+      if (wr) { ctx.fillStyle = wr; ctx.beginPath(); ctx.ellipse(x, hy - hr * .55, hr * 1.12, hr * .78, 0, Math.PI, 0); ctx.fill(); ctx.beginPath(); ctx.arc(x + hr * .2, hy - hr * 1.2, hr * .36, 0, 7); ctx.fill(); }
+      else { ctx.fillStyle = "#2b1d14"; for (var k = -3; k <= 3; k++) blob(x + k * hr * .3, hy - hr * .78 + Math.abs(k) * hr * .1, hr * .3, "#2b1d14"); }
+      ctx.fillStyle = "#2b1d14"; ctx.beginPath(); ctx.ellipse(x - hr * .36, hy + hr * .02, hr * .09, hr * .13, 0, 0, 7); ctx.ellipse(x + hr * .36, hy + hr * .02, hr * .09, hr * .13, 0, 0, 7); ctx.fill();
+      ctx.strokeStyle = "#3a2216"; ctx.lineWidth = Math.max(1, hr * .1); ctx.beginPath(); ctx.arc(x, hy + hr * .22, hr * .36, .2, Math.PI - .2); ctx.stroke();
+      ctx.fillStyle = "rgba(240,120,90,.35)"; blob(x - hr * .6, hy + hr * .32, hr * .16, ctx.fillStyle); blob(x + hr * .6, hy + hr * .32, hr * .16, ctx.fillStyle);
+    }
+    function hug(x, y, s, bob){ // a child hugging a goat: goat in front, the child's arm wrapped over its back
+      person(x - 40 * s, y, 200 * s, SKIN[0], "#f4a62a", null, bob);
+      goat(x + 60 * s, y - 12 * s, 1.7 * s, -1, reduce ? 0 : Math.sin(T * 2.2) * 2);
+      ctx.fillStyle = SKIN[0]; ctx.beginPath(); ctx.ellipse(x + 34 * s, y - 70 * s + (bob || 0), 40 * s, 11 * s, -.12, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.arc(x + 72 * s, y - 74 * s + (bob || 0), 11 * s, 0, 7); ctx.fill();
+    }
+    function sparks(x, y, s, a){ ctx.globalAlpha = a; ctx.strokeStyle = "#f08a1c"; ctx.lineWidth = 4 * s; ctx.lineCap = "round"; var w = 1 + Math.sin(T * 3) * .15; ctx.beginPath(); [[-.5, 0], [-.15, -.35], [.25, -.4]].forEach(function(v){ ctx.moveTo(x + v[0] * 40 * s, y + v[1] * 40 * s); ctx.lineTo(x + v[0] * 40 * s * (1 + .5 * w), y + v[1] * 40 * s * (1 + .5 * w) - 12 * s); }); ctx.stroke(); }
+
+    // camera: frames the hill of the current stage (with margin), easing between stages
+    function view(k){ var e = E[Math.max(0, Math.min(LAST, k))], tight = k < 0 ? .78 : 1; return {cx: CX, cy: CY, hw: (e.rx + 30) * tight, hh: (e.ry + 40) * tight}; }
+    function size(){ var r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 2); W = r.width; H = r.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); draw(); }
+    function draw(){
+      if (!ctx || !W) return;
+      var i0 = Math.floor(p), f = smooth(p - i0), a = view(i0 - 1), b = view(Math.min(LAST, i0));
+      var sa = Math.min(W / (2 * a.hw), H / (2 * a.hh)), sb = Math.min(W / (2 * b.hw), H / (2 * b.hh));
+      var s = Math.exp(Math.log(sa) + (Math.log(sb) - Math.log(sa)) * f), vx = a.cx + (b.cx - a.cx) * f, vy = a.cy + (b.cy - a.cy) * f;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var sky = ctx.createLinearGradient(0, 0, 0, H); sky.addColorStop(0, "#fdf4e8"); sky.addColorStop(1, "#fbecd9"); ctx.fillStyle = sky; ctx.fillRect(0, 0, W, H);
+      ctx.setTransform(dpr * s, 0, 0, dpr * s, dpr * (W / 2 - vx * s), dpr * (H / 2 - vy * s));
+      var L = function(k){ return smooth(p - k); }, bob = function(ph, amp){ return reduce ? 0 : Math.sin(T * 2 + ph) * (amp || 2.5); };
+      clouds.forEach(function(cd, k){ ctx.globalAlpha = .9; cloud(cd[0] + Math.sin(T * .2 + k) * 8, cd[1], cd[2]); });
+      for (var k = LAST; k >= 0; k--){
+        var raw = clamp(p - k); if (!raw) continue;
+        // each new hill swells out from the one inside it with a little overshoot; everything on it rides along
+        var e = E[k], inner = k ? E[k - 1].rx / e.rx : .5, grow = inner + (1 - inner) * backOut(raw), al = clamp(raw * 2.2);
+        ctx.save(); ctx.translate(CX, CY); ctx.scale(grow, grow); ctx.translate(-CX, -CY);
+        ctx.globalAlpha = al;
+        var g = ctx.createRadialGradient(CX, CY, e.ry * .1, CX, CY, e.rx); g.addColorStop(0, HILL[k]); g.addColorStop(1, HILL[Math.min(4, k + 1)]);
+        ctx.fillStyle = g; ctx.strokeStyle = "#fffaf3"; ctx.lineWidth = 7 / grow;
+        ctx.beginPath(); ctx.ellipse(CX, CY, e.rx, e.ry, 0, 0, 7); ctx.fill(); ctx.stroke();
+        // what stands on this hill (drawn before the next hill in, so that hill tucks over their feet)
+        if (k === 4) reg.forEach(function(d, n){ if (n / reg.length > al + .02) return; if (d[2] === "h") hut(d[0], d[1], .42 * d[3]); else if (d[2] === "t") tree(d[0], d[1], .45 * d[3]); else goat(d[0], d[1], .32 * d[3], n % 2 ? 1 : -1); });
+        if (k === 3) { town.forEach(function(d, n){ if (d[2] === "h") hut(d[0], d[1], .62 * d[3]); else if (d[2] === "t") tree(d[0], d[1], .62 * d[3]); else goat(d[0], d[1], .5 * d[3], n % 2 ? 1 : -1, bob(n, 1.5)); }); vilTrees.forEach(function(t){ tree(t[0], t[1], .8); }); vilHuts.forEach(function(h){ hut(h[0], h[1], .7); }); vilGoats.forEach(function(gt, n){ goat(gt[0], gt[1], .5, n % 2 ? 1 : -1, bob(n, 1.5)); }); vil.forEach(function(v, n){ person(v[0], v[1], v[2], pick(SKIN, v[3]), pick(SHIRT, v[4]), v[5] >= 0 ? pick(WRAP, v[5]) : null, bob(n * .7, 2)); }); }
+        if (k === 2) { tree(160, 345, 1.15); hut(250, 365, 1); hut(150, 395, .85); nbr.forEach(function(v, n){ person(v[0], v[1], v[2], pick(SKIN, v[3]), pick(SHIRT, v[4]), v[5] >= 0 ? pick(WRAP, v[5]) : null, bob(n * .9)); }); goat(780, 385, .95, 1, bob(1, 2)); goat(880, 395, .95, 1, bob(2, 2)); bush(930, 420, 1.1); bush(90, 425, 1);
+          hut(300, 1000, .8); goat(440, 1010, .8, 1, bob(5, 2)); goat(570, 1016, .8, -1, bob(6, 2)); hut(700, 990, .8); tree(820, 950, .7); bush(190, 940, 1); bush(940, 760, 1); bush(60, 760, 1); }
+        if (k === 1) { tree(230, 440, 1); hut(330, 450, .95); fam.forEach(function(v, n){ person(v[0], v[1], v[2], pick(SKIN, v[3]), pick(SHIRT, v[4]), v[5] >= 0 ? pick(WRAP, v[5]) : null, bob(n * 1.2)); }); goat(690, 468, .9, -1, bob(3, 2)); goat(790, 476, .9, -1, bob(4, 2)); bush(820, 520, 1); sparks(640, 400, 1, al); ctx.globalAlpha = al;
+          bush(330, 830, 1); goat(430, 862, .8, 1, bob(7, 2)); goat(590, 866, .8, -1, bob(8, 2)); bush(690, 838, 1); bush(170, 640, .9); bush(830, 650, .9); }
+        if (k === 0) { bush(370, 730, 1.1); bush(640, 735, 1.2); bush(420, 760, .8); hug(490, 750, 1, bob(0, 2)); sparks(600, 590, 1, al); ctx.globalAlpha = al; }
+        ctx.restore();
+      }
+      // ripple: a ring that rushes outward from the newest hill when a step is chosen
+      var pu = (performance.now() - pulse.t0) / 1100;
+      if (pu >= 0 && pu < 1) {
+        var ek = E[pulse.k], rk = 1 + pu * .35;
+        ctx.globalAlpha = (1 - pu) * .8; ctx.strokeStyle = "#ff8a3d"; ctx.lineWidth = (10 - 7 * pu) / s;
+        ctx.beginPath(); ctx.ellipse(CX, CY, ek.rx * rk, ek.ry * rk, 0, 0, 7); ctx.stroke();
+        ctx.globalAlpha = (1 - pu) * .5; ctx.strokeStyle = "#fffaf3"; ctx.lineWidth = 4 / s;
+        ctx.beginPath(); ctx.ellipse(CX, CY, ek.rx * (rk - .08), ek.ry * (rk - .08), 0, 0, 7); ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      // labels sit on the crest of each hill, like the picture book
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var fs = W < 420 ? 12 : 14;
+      for (var j = 0; j <= LAST; j++){
+        var la = L(j); if (!la) continue;
+        var rj = clamp(p - j), gj = (j ? E[j - 1].rx / E[j].rx : .5), gr = gj + (1 - gj) * backOut(rj);
+        var e2 = E[j], px = W / 2 + (CX - vx) * s, py = H / 2 + (CY - e2.ry * gr - vy) * s + 18;
+        if (py < 8 || py > H - 8) continue;
+        var t1 = fmt(stages[j].g) + "마리", t2 = stages[j].who;
+        ctx.font = "800 " + (fs + 3) + "px Archivo,'Noto Sans KR',sans-serif"; var w1 = ctx.measureText(t1).width;
+        ctx.font = "700 " + fs + "px 'Noto Sans KR',sans-serif"; var w2 = ctx.measureText(t2).width, bw = w1 + w2 + 34, bh = fs + 16;
+        ctx.globalAlpha = la * .95; ctx.fillStyle = "#fffaf3"; ctx.beginPath(); if (ctx.roundRect) ctx.roundRect(px - bw / 2, py - bh / 2, bw, bh, bh / 2); else ctx.rect(px - bw / 2, py - bh / 2, bw, bh); ctx.fill();
+        ctx.textBaseline = "middle"; ctx.textAlign = "left";
+        ctx.font = "800 " + (fs + 3) + "px Archivo,'Noto Sans KR',sans-serif"; ctx.fillStyle = "#e4570f"; ctx.fillText(t1, px - bw / 2 + 12, py + 1);
+        ctx.fillStyle = "#d9cdbd"; ctx.fillRect(px - bw / 2 + 18 + w1, py - fs / 2, 1.5, fs);
+        ctx.font = "700 " + fs + "px 'Noto Sans KR',sans-serif"; ctx.fillStyle = "#3a3a3a"; ctx.fillText(t2, px - bw / 2 + 24 + w1, py + 1);
+      }
+      ctx.globalAlpha = 1;
+    }
+    var box0 = document.getElementById("ripple");
+    function onScreen(){ var r = box0.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+    // step changes are a timed tween (they run even with reduced motion, since the visitor asked for them;
+    // only the idle bobbing and autoplay are skipped then)
+    var tw = {from: 0, to: 1, t0: 0, dur: 1}, pulse = {t0: -1e9, k: 0};
+    function backOut(x){ var c1 = 1.70158 * .9, c3 = c1 + 1; x = clamp(x); return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); }
+    function frame(now){
+      now = now || performance.now(); T = now / 1000;
+      var u = clamp((now - tw.t0) / tw.dur), e = u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+      p = tw.from + (tw.to - tw.from) * e;
+      if (u >= 1) p = target;
+      var animating = u < 1 || now - pulse.t0 < 1100;
+      // goat counter eases on a log scale between the stages
+      var i0 = Math.max(0, Math.min(LAST, Math.floor(p) - 1)), fr = clamp(p - 1 - i0), g0 = stages[i0].g, g1 = stages[Math.min(LAST, i0 + 1)].g;
+      cntEl.textContent = fmt(Math.round(Math.exp(Math.log(g0) + (Math.log(g1) - Math.log(g0)) * smooth(fr))));
+      if (animating || onScreen()) draw();
+      // keep the scene gently alive (people and goats bob) while it is on screen; stop otherwise
+      raf = (animating || (!reduce && onScreen())) ? requestAnimationFrame(frame) : 0;
+    }
+    if (!reduce) window.addEventListener("scroll", function(){ if (!raf && onScreen()) raf = requestAnimationFrame(frame); }, {passive: true});
+    function go(i, user){
+      var now = performance.now(), dist = Math.abs(i + 1 - p);
+      tw = {from: p, to: i + 1, t0: now, dur: Math.min(2200, 900 + dist * 450)};
+      if (i + 1 > p + .01) pulse = {t0: now + tw.dur * .45, k: i};
+      idx = i; target = i + 1;
+      btns.forEach(function(b, k){ b.classList.toggle("on", k === i); b.classList.toggle("done", k < i); });
+      desc.innerHTML = stages[i].desc; whoEl.textContent = stages[i].who;
+      if (user) clearTimeout(timer);
+      cancelAnimationFrame(raf); raf = requestAnimationFrame(frame);
+    }
+    function play(){ clearTimeout(timer); p = 0; go(0); (function next(i){ timer = setTimeout(function(){ if (i <= LAST) { go(i); next(i + 1); } }, 2600); })(1); }
+    btns.forEach(function(b){ b.addEventListener("click", function(){ go(+b.dataset.i, true); }); });
+    document.getElementById("rpReplay").addEventListener("click", play);
+    window.addEventListener("resize", size);
+    size(); go(0, true);
+    // auto-play once, the first time the panel is mostly on screen
+    if (!reduce) {
+      var box = document.getElementById("ripple"), played = false;
+      var check = function(){
+        if (played) return;
+        var r = box.getBoundingClientRect(), vis = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
+        if (vis > Math.min(r.height, innerHeight) * .55) { played = true; window.removeEventListener("scroll", check); play(); }
+      };
+      window.addEventListener("scroll", check, {passive: true});
+      if ("IntersectionObserver" in window) new IntersectionObserver(check, {threshold: [.3, .55, .8]}).observe(box);
+      check();
+    }
+  })();
+
+  // donate links
+  var toast = document.getElementById("toast"), tt;
+  document.querySelectorAll(".donate-link").forEach(function(a){
+    if (c.donateUrl) { a.href = c.donateUrl; a.target = "_blank"; a.rel = "noopener"; }
+    else {
+      a.removeAttribute("target");
+      a.addEventListener("click", function(e){
+        if (a.classList.contains("mini")) return; // 상단 버튼은 하단 후원 영역으로 이동
+        e.preventDefault();
+        toast.textContent = "후원 페이지를 준비하고 있어요. 곧 연결됩니다.";
+        toast.hidden = false; clearTimeout(tt);
+        tt = setTimeout(function(){ toast.hidden = true; }, 2600);
+      });
+    }
+  });
+  if (c.donateUrl) { var m = document.querySelector(".top .mini"); if (m) m.href = c.donateUrl; }
+
+  // field map: clean light atlas (Leaflet) with Zimbabwe's province / district / ward boundaries
+  // (countries: Natural Earth via world-atlas; Zimbabwe boundaries: geoBoundaries, ZIMSTAT · OCHA, CC BY 3.0 IGO)
+  var sites = (c.regions || []).filter(function(r){ return r && (r.district || (isFinite(r.lat) && isFinite(r.lon))); });
+  if (sites.length) {
+    document.getElementById("siteList").textContent = sites.map(function(r){ return r.name; }).join(" · ");
+  } else if (c.regionConfirmed) {
+    document.getElementById("siteList").textContent = c.region;
+  }
+  var wmsg = document.getElementById("wmapMsg"), btnAll = document.getElementById("btnAll"), btnZim = document.getElementById("btnZim"), btnSite = document.getElementById("btnSite");
+  var pickEl = document.getElementById("wmPick"), hintEl = document.getElementById("wmapHint");
+  var finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  hintEl.textContent = (sites.length ? "주황색 사업 지역을 누르면 그곳으로 확대돼요. " : "") + "주를 누르면 구(District)가, 구를 누르면 하위구(Ward)까지 확대돼요." + (finePointer ? " 지도를 한 번 누른 뒤에는 마우스 휠로도 확대할 수 있어요." : " 두 손가락으로 확대·축소할 수 있어요.");
+  function failMap(){ wmsg.textContent = "지도를 불러오지 못했어요. 새로고침해 주세요."; wmsg.hidden = false; }
+  var KO = {"Manicaland":"마니칼랜드","Mashonaland Central":"마쇼날랜드 센트럴","Mashonaland East":"마쇼날랜드 이스트","Mashonaland West":"마쇼날랜드 웨스트","Masvingo":"마스빙고","Matabeleland North":"마타벨렐란드 노스","Matabeleland South":"마타벨렐란드 사우스","Midlands":"미들랜즈","Harare":"하라레","Bulawayo":"불라와요"};
+  // hand-placed label points (bounding-box centres fall outside the irregular shapes)
+  var PLBL = {"Manicaland":[-19.1,32.45],"Mashonaland Central":[-16.75,31.25],"Mashonaland East":[-18.2,31.55],"Mashonaland West":[-17.3,29.7],"Masvingo":[-20.5,31.1],"Matabeleland North":[-18.6,27.3],"Matabeleland South":[-21.1,28.9],"Midlands":[-19.35,29.8],"Harare":[-17.83,31.05],"Bulawayo":[-20.15,28.58]};
+  var NEIGH = [["잠비아", -14.6, 27.4], ["모잠비크", -17.6, 34.6], ["보츠와나", -21.6, 24.9], ["남아프리카공화국", -23.6, 29.6]];
+  if (window.L && window.fetch) {
+    var map = L.map("lmap", {
+      zoomSnap: .25, zoomDelta: .5, minZoom: 3, maxZoom: 13, scrollWheelZoom: false,
+      dragging: finePointer, tap: false, worldCopyJump: false, attributionControl: true,
+      maxBounds: [[-50, -40], [45, 85]], maxBoundsViscosity: .8
+    });
+    map.attributionControl.setPrefix(false);
+    map.attributionControl.addAttribution("경계: Natural Earth · geoBoundaries");
+    var startAfrica = !reduceMotion;
+    map.setView(startAfrica ? [-8, 24] : [-19, 29.6], startAfrica ? 3.25 : 6);
+    // scroll-wheel zoom only once the visitor has engaged with the map, so page scrolling isn't hijacked
+    map.on("click", function(){ if (finePointer) map.scrollWheelZoom.enable(); });
+    map.getContainer().addEventListener("mouseleave", function(){ map.scrollWheelZoom.disable(); });
+    var getJSON = function(u){ return fetch(u).then(function(r){ if (!r.ok) throw 0; return r.json(); }); };
+
+    Promise.all([getJSON("data/africa.json"), getJSON("data/zwe-admin.json")]).then(function(res){
+      var WORLD = res[0], A = res[1];
+      wmsg.hidden = true;
+      var canvas = L.canvas({padding: .3});
+      var levelEls = [].slice.call(document.querySelectorAll(".wmap-legend [data-lv]"));
+      function polysOf(g){ return g.type === "Polygon" ? [g.coordinates] : g.coordinates; }
+      function prep(fc){
+        fc.features.forEach(function(f){
+          var b = [180, 90, -180, -90];
+          polysOf(f.geometry).forEach(function(p){ p[0].forEach(function(q){ if (q[0] < b[0]) b[0] = q[0]; if (q[1] < b[1]) b[1] = q[1]; if (q[0] > b[2]) b[2] = q[0]; if (q[1] > b[3]) b[3] = q[1]; }); });
+          f.bb = b;
+        });
+        return fc;
+      }
+      function inRing(x, y, ring){ var cIn = false; for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) { var xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) cIn = !cIn; } return cIn; }
+      function inside(f, ll){
+        var x = ll.lng, y = ll.lat, b = f.bb;
+        if (x < b[0] || x > b[2] || y < b[1] || y > b[3]) return false;
+        return polysOf(f.geometry).some(function(p){ return inRing(x, y, p[0]) && !p.slice(1).some(function(h){ return inRing(x, y, h); }); });
+      }
+      function hit(fc, ll){ if (!fc) return null; for (var i = 0; i < fc.features.length; i++) if (inside(fc.features[i], ll)) return fc.features[i]; return null; }
+      prep(A.prov); prep(A.dist); prep(A.country);
+      var zimBounds = L.geoJSON(A.country).getBounds();
+
+      // base: neighbouring countries in soft beige, Zimbabwe in warm peach
+      L.geoJSON(WORLD, {interactive: false, style: {color: "#f7f5f0", weight: 1, fillColor: "#e3ddd2", fillOpacity: 1}}).addTo(map);
+      L.geoJSON(A.prov, {interactive: false, style: {stroke: false, fillColor: "#f7cfac", fillOpacity: 1}}).addTo(map);
+
+      var wardStyle = {color: "#d98a55", weight: .7, opacity: .55, dashArray: "2 3", fill: false, interactive: false, renderer: canvas};
+      var distLine = L.geoJSON(A.dist, {interactive: false, style: {color: "#fff", weight: 1.2, opacity: .95, fill: false, renderer: canvas}});
+      var provLine = L.geoJSON(A.prov, {interactive: false, style: {color: "#fff", weight: 2.6, opacity: 1, fill: false}});
+      var ctryLine = L.geoJSON(A.country, {interactive: false, style: {color: "#e8692a", weight: 2.2, opacity: 1, fill: false}}).addTo(map);
+      var wards = null, wardLine = null, wardsLoading = false;
+      function loadWards(){
+        if (wards || wardsLoading) return;
+        wardsLoading = true;
+        getJSON("data/zwe-wards.json").then(function(W){
+          wards = prep(W); wardLine = L.geoJSON(W, {interactive: false, style: wardStyle});
+          levels();
+        }).catch(function(){ wardsLoading = false; });
+      }
+
+      // project sites: the whole district tinted orange with a pulsing pin; tapping it flies in
+      var siteLayer = L.layerGroup().addTo(map), siteHits = [], siteFills = [];
+      sites.forEach(function(s){
+        var d = s.district ? A.dist.features.filter(function(f){ return f.properties.n.toLowerCase() === String(s.district).toLowerCase(); })[0] : null;
+        if (d) siteFills.push(L.geoJSON(d, {interactive: false, style: {color: "#e32c13", weight: 2, fillColor: "#ff7a38", fillOpacity: .55}}).addTo(siteLayer));
+        var at = isFinite(s.lat) && isFinite(s.lon) ? [s.lat, s.lon] : d ? d.properties.c : null;
+        if (!at) return;
+        var item = {s: s, d: d, at: L.latLng(at)};
+        siteHits.push(item);
+        L.marker(at, {icon: L.divIcon({className: "", html: '<div class="wm-pin"><i></i></div>', iconSize: [18, 18]}), keyboard: true, title: s.name + " — 눌러서 확대"})
+          .bindTooltip(s.name, {permanent: true, direction: "top", offset: [0, -12], className: "wm-tip wm-site"})
+          .on("click", function(e){ L.DomEvent.stop(e); flySite(item); }).addTo(siteLayer);
+      });
+      function flySite(item){
+        var b = item.d ? L.geoJSON(item.d).getBounds() : L.latLngBounds(item.at, item.at).pad(.3);
+        if (item.d) {
+          loadWards();
+          pickEl.innerHTML = '<span class="wm-path">' + crumbs({lv: 2, f: item.d}) + '</span>';
+        }
+        btnAll.classList.remove("on"); btnZim.classList.remove("on"); if (btnSite) btnSite.classList.add("on");
+        var z = item.d ? Math.min(Math.max(map.getBoundsZoom(b, false, [36, 36]), Z_WARD), 11.5) : 10;
+        var to = item.d ? b.getCenter() : item.at;
+        if (reduceMotion) map.setView(to, z, {animate: false}); else map.flyTo(to, z, {duration: 2});
+      }
+      if (btnSite && siteHits.length) { btnSite.hidden = false; btnSite.addEventListener("click", function(){ flySite(siteHits[0]); }); }
+
+      // labels
+      function label(ll, html, cls){ return L.marker(ll, {icon: L.divIcon({className: "wm-lbl " + cls, html: html, iconSize: null}), interactive: false, keyboard: false}); }
+      var ctryLbl = label(zimBounds.getCenter(), c.country, "ct").addTo(map);
+      var neighLbls = L.layerGroup(NEIGH.map(function(n){ return label([n[1], n[2]], n[0], "nb"); }));
+      var provLbls = L.layerGroup(A.prov.features.map(function(f){
+        var m = label(PLBL[f.properties.n] || L.geoJSON(f).getBounds().getCenter(), (KO[f.properties.n] || f.properties.n), "pv");
+        m.small = f.properties.n === "Harare" || f.properties.n === "Bulawayo"; return m;
+      }));
+      var distLbls = L.layerGroup(A.dist.features.map(function(f){ var m = label(f.properties.c, f.properties.n, "ds"), b = f.bb; m.small = (b[2] - b[0]) * (b[3] - b[1]) < .08; return m; }));
+
+      // which boundaries show at which zoom: country → province → district → ward
+      var Z_PROV = 5.25, Z_DIST = 7, Z_WARD = 8.75;
+      function show(layer, on){ if (!layer) return; if (on && !map.hasLayer(layer)) layer.addTo(map); else if (!on && map.hasLayer(layer)) map.removeLayer(layer); }
+      function levels(){
+        var z = map.getZoom();
+        show(provLine, z >= Z_PROV);
+        show(provLbls, z >= Z_PROV && z < Z_WARD + .5);
+        provLbls.eachLayer(function(m){ m.setOpacity(m.small && z < 8 ? 0 : 1); });
+        show(ctryLbl, z < Z_PROV);
+        show(neighLbls, z >= 4.75 && z < 7.5);
+        show(distLine, z >= Z_DIST);
+        show(distLbls, z >= Z_DIST + .75);
+        distLbls.eachLayer(function(m){ m.setOpacity(m.small && z < 9.5 ? 0 : 1); });
+        if (z >= Z_WARD - .5) loadWards();
+        show(wardLine, z >= Z_WARD);
+        levelEls.forEach(function(el){ var lv = +el.getAttribute("data-lv"); el.classList.toggle("off", (lv === 1 && z < Z_PROV) || (lv === 2 && z < Z_DIST) || (lv === 3 && z < Z_WARD)); });
+        if (map.hasLayer(provLine)) provLine.bringToFront();
+        ctryLine.bringToFront();
+        siteLayer.eachLayer(function(l){ if (l.bringToFront) l.bringToFront(); });
+        // once zoomed in on a site, thin its fill so the wards inside stay readable
+        siteFills.forEach(function(l){ l.setStyle({fillOpacity: z >= Z_WARD ? .16 : .55}); });
+      }
+      map.on("zoomend", levels);
+
+      // hover + click: the finest level visible at the current zoom
+      var hl = null, hoverF = null;
+      function pickAt(ll){
+        var z = map.getZoom(), lv = z >= Z_WARD && wards ? 3 : z >= Z_DIST ? 2 : z >= Z_PROV ? 1 : 0;
+        if (lv === 0) return hit(A.country, ll) ? {lv: 0, f: A.country.features[0]} : null;
+        var f = hit(lv === 3 ? wards : lv === 2 ? A.dist : A.prov, ll);
+        return f ? {lv: lv, f: f} : null;
+      }
+      function crumbs(p){
+        var pr = p.f.properties, out = '<span>' + c.country + '</span>';
+        if (p.lv === 1) out += ' <s>›</s> <b>' + (KO[pr.n] || pr.n) + ' 주</b>';
+        if (p.lv === 2) out += ' <s>›</s> ' + (KO[pr.p] || pr.p) + ' 주 <s>›</s> <b>' + pr.n + ' 구</b>';
+        if (p.lv === 3) out += ' <s>›</s> ' + (KO[pr.p] || pr.p) + ' 주 <s>›</s> ' + pr.d + ' 구 <s>›</s> <b>' + pr.n + '번 하위구</b>';
+        return out;
+      }
+      function tipText(p){
+        var pr = p.f.properties;
+        if (p.lv === 0) return c.country;
+        if (p.lv === 1) return (KO[pr.n] || pr.n) + " 주 · " + pr.n;
+        if (p.lv === 2) return pr.n + " 구 · " + (KO[pr.p] || pr.p) + " 주";
+        return pr.d + " 구 " + pr.n + "번 하위구 (Ward)";
+      }
+      function highlight(p){
+        if (hl) { map.removeLayer(hl); hl = null; }
+        if (!p) return;
+        hl = L.geoJSON(p.f, {interactive: false, style: {color: "#e8692a", weight: p.lv === 3 ? 1.6 : 2.2, fillColor: "#ff7a38", fillOpacity: .22}}).addTo(map);
+      }
+      var tip = L.tooltip({sticky: true, direction: "top", offset: [0, -12], className: "wm-tip"});
+      map.on("mousemove", function(e){
+        var p = pickAt(e.latlng), f = p && p.f;
+        if (f !== hoverF) { hoverF = f; highlight(p); map.getContainer().style.cursor = p ? "pointer" : ""; }
+        if (p) { tip.setLatLng(e.latlng).setContent(tipText(p)); if (!map.hasLayer(tip)) tip.addTo(map); }
+        else if (map.hasLayer(tip)) map.removeLayer(tip);
+      });
+      map.getContainer().addEventListener("mouseleave", function(){ hoverF = null; highlight(null); if (map.hasLayer(tip)) map.removeLayer(tip); });
+      map.on("click", function(e){
+        // a project site's district takes the tap at any zoom until you're already zoomed in on it
+        var site = siteHits.filter(function(it){ return it.d && inside(it.d, e.latlng); })[0];
+        if (site && map.getZoom() < Z_WARD) { flySite(site); return; }
+        var p = pickAt(e.latlng);
+        if (!p) return;
+        pickEl.innerHTML = '<span class="wm-path">' + crumbs(p) + '</span>';
+        hoverF = p.f; highlight(p);
+        var b = L.geoJSON(p.f).getBounds();
+        if (p.lv === 2) loadWards();
+        if (p.lv < 3) fly(b, p.lv === 0 ? Z_PROV + .5 : p.lv === 1 ? Z_DIST + 1 : Z_WARD + 1.25);
+        else if (!finePointer) L.popup({closeButton: false, className: "wm-tip", offset: [0, -4]}).setLatLng(e.latlng).setContent(tipText(p)).openOn(map);
+      });
+      function fly(bounds, minZ){
+        var z = Math.max(minZ, Math.min(map.getBoundsZoom(bounds, false, [24, 24]), 12));
+        if (reduceMotion) map.setView(bounds.getCenter(), z, {animate: false}); else map.flyTo(bounds.getCenter(), z, {duration: 1.4});
+      }
+      function home(){ btnAll.classList.remove("on"); btnZim.classList.add("on"); if (btnSite) btnSite.classList.remove("on"); if (reduceMotion) map.fitBounds(zimBounds, {padding: [20, 20], animate: false}); else map.flyToBounds(zimBounds, {padding: [20, 20], duration: 2.2}); }
+      btnZim.addEventListener("click", home);
+      btnAll.addEventListener("click", function(){ btnAll.classList.add("on"); btnZim.classList.remove("on"); if (btnSite) btnSite.classList.remove("on"); if (reduceMotion) map.setView([-8, 24], 3.25, {animate: false}); else map.flyTo([-8, 24], 3.25, {duration: 1.8}); });
+      map.on("zoomstart", function(){ if (hl) { map.removeLayer(hl); hl = null; hoverF = null; } });
+      levels();
+      // fly from Africa down to Zimbabwe the first time the map comes into view
+      // (re-measure first: the container may have had no size yet when the page loaded in a hidden tab)
+      if (!startAfrica) map.fitBounds(zimBounds, {padding: [20, 20], animate: false});
+      if ("IntersectionObserver" in window) {
+        var once = new IntersectionObserver(function(es){
+          if (!es[0].isIntersecting) return;
+          once.disconnect(); map.invalidateSize({animate: false});
+          if (startAfrica) setTimeout(home, 500); else map.fitBounds(zimBounds, {padding: [20, 20], animate: false});
+        }, {threshold: .45});
+        once.observe(map.getContainer());
+      } else home();
+    }).catch(failMap);
+  } else failMap();
+
+  // scroll position dots
+  var dots = [].slice.call(document.querySelectorAll(".dots a"));
+  var secs = dots.map(function(d){ return document.getElementById(d.getAttribute("data-sec")); });
+  var navLinks = [].slice.call(document.querySelectorAll(".topnav a"));
+  var progress = document.getElementById("progress");
+  var ticking = false;
+  function markDot(){
+    ticking = false;
+    var line = window.innerHeight * 0.4, cur = 0;
+    secs.forEach(function(s, i){ if (s && s.getBoundingClientRect().top <= line) cur = i; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = secs.length - 1;
+    dots.forEach(function(d, i){ d.classList.toggle("on", i === cur); if (i === cur) d.setAttribute("aria-current", "true"); else d.removeAttribute("aria-current"); });
+    var curId = secs[cur] && secs[cur].id;
+    navLinks.forEach(function(a){ a.classList.toggle("on", a.getAttribute("data-sec") === curId); });
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = "scaleX(" + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ")";
+  }
+  window.addEventListener("scroll", function(){ if (!ticking){ ticking = true; requestAnimationFrame(markDot); } }, {passive:true});
+  window.addEventListener("resize", markDot);
+  markDot();
+
+  // gentle reveal (content is visible at rest)
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("js");
+  var vh = window.innerHeight;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.remove("pre"); io.unobserve(e.target); } });
+  }, {rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll(".rv").forEach(function(el){
+    if (el.getBoundingClientRect().top > vh) { el.classList.add("pre"); io.observe(el); }
+  });
+})();
+</script>
+
+</html>
