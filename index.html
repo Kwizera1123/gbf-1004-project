@@ -308,7 +308,7 @@ section.blk + section.blk{padding-top:0}
 }
 
 /* impact ripple: one child → one family → a village → a region */
-.ripple{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.ripple{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
 .rp-stage{position:relative;min-width:0;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 50% 50%,#fff3e8 0%,#fbf6ef 55%,#f6f0e6 100%)}
 .rp-stage canvas{display:block;width:100%;aspect-ratio:1/1;max-width:100%}
 .rp-count,.rp-who{display:none!important}
@@ -331,15 +331,17 @@ section.blk + section.blk{padding-top:0}
 .rp-desc b{color:#c43d0c}
 .rp-replay{margin-top:10px;background:none;border:0;padding:6px 2px;font:inherit;font-size:13px;font-weight:700;color:#6f6a60;cursor:pointer}
 .rp-replay:hover{color:var(--orange)}
+/* the step description is hidden; the replay link sits on the picture so no empty band is left below */
+.rp-desc{display:none}
+.rp-replay{position:absolute;z-index:2;margin:0;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.85);box-shadow:0 1px 4px rgba(0,0,0,.08);top:22px;right:22px}
 /* desktop: the picture spans exactly from the top of the first step (1마리) to the bottom of the last (1,004마리) */
 @media (min-width:881px){
-  .ripple{grid-template-rows:auto auto auto;align-items:start;row-gap:0}
+  .ripple{align-items:start}
   .rp-side{display:contents}
   .rp-stage{grid-column:1;grid-row:1;align-self:stretch;min-height:280px}
   .rp-stage canvas{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto}
   .rp-steps{grid-column:2;grid-row:1}
-  .rp-desc{grid-column:2;grid-row:2}
-  .rp-replay{grid-column:2;grid-row:3;justify-self:start}
+  .rp-replay{top:auto;right:auto;left:36px;bottom:34px}
 }
 @media (max-width:880px){
   .ripple{grid-template-columns:1fr;padding:14px;gap:16px}
