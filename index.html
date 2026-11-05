@@ -242,6 +242,9 @@ section.blk + section.blk{padding-top:0}
 .act-list li:first-child{border-top:0}
 .act-list i{flex:none;width:40px;height:40px;border-radius:50%;background:var(--orange);display:grid;place-items:center}
 .act-list svg{width:21px;height:21px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+/* list 02: bare line icons, no circle or box */
+.act-list.plain i{background:none;border-radius:0}
+.act-list.plain svg{width:26px;height:26px;stroke:var(--s-deep)}
 .act-list b{font-size:16px;font-weight:700;line-height:1.4;letter-spacing:-.02em}
 .act-list small{display:block;font-size:12.5px;color:var(--s-ink2);margin-top:2px}
 /* desktop: the four rows share exactly the photo's height (caption hangs below the photo) */
@@ -664,7 +667,7 @@ section[id]{scroll-margin-top:60px}
         <h3 class="act-title"><span class="act-no">02</span>사육 교육을 통한 생계역량 강화</h3>
         <div class="act-grid">
           <figure class="act-ph"><img src="img/training.jpg" width="1054" height="703" alt="마을 주민들이 모여 교육을 받는 모습" loading="lazy"><figcaption>주민 교육 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
-          <ul class="act-list">
+          <ul class="act-list plain">
             <li><i><svg viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg></i><div><b>염소 사육 기초 교육</b><small>질병관리 · 번식</small></div></li>
             <li><i><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 11l2 2 4-4M9 17h6"/></svg></i><div><b>현장 사육 실습 교육</b><small>기록 관리 · 사료 · 질병 예방</small></div></li>
             <li><i><svg viewBox="0 0 24 24"><path d="M3 21h18M6 17V11M11 17V7M16 17v-4M20 5l-5 5-3-3-5 5"/></svg></i><div><b>판매(마케팅) 교육</b><small>염소와 새끼 염소를 소득으로 연결</small></div></li>
