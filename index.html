@@ -281,8 +281,8 @@ section.blk + section.blk{padding-top:0}
 .stage ul li::before{content:"";position:absolute;left:0;top:.68em;width:5px;height:5px;background:var(--s-deep)}
 .st-fig{margin-top:auto;display:flex;align-items:baseline;gap:4px;padding-top:12px;border-top:1px solid var(--s-hair)}
 .st-fig b{font-family:var(--f-en);font-weight:900;font-size:clamp(34px,3.6vw,42px);line-height:.9;color:var(--s-ink)}
-.st-fig span{font-size:14px;font-weight:800;color:var(--s-deep)}
-.st-fig span:first-child{font-weight:500;color:var(--s-ink2)}
+.st-fig > span{font-size:14px;font-weight:800;color:var(--s-deep)}
+.st-fig > span:first-child{font-weight:500;color:var(--s-ink2)}
 @media (max-width:900px){
   .act-grid{grid-template-columns:1fr}
   .stages{grid-template-columns:1fr 1fr}
@@ -1316,43 +1316,48 @@ var CAMPAIGN = {
   });
 })();
 
-// overview figures: odometer roll-up (each digit spins past 0–9 and lands) the first time the row scrolls into view
+// odometer roll-up (each digit spins past 0–9 and lands) the first time each group scrolls into view:
+// the overview figures and the process figures (1,004마리 / 502가정)
 (function(){
-  var nums = [].slice.call(document.querySelectorAll(".sum-facts strong > span[data-k]"));
-  if (!nums.length) return;
-  var cols = [];
-  nums.forEach(function(el){
-    var txt = el.textContent, out = document.createDocumentFragment();
-    el.setAttribute("aria-label", txt);
-    for (var i = 0; i < txt.length; i++) {
-      var ch = txt[i];
-      if (!/[0-9]/.test(ch)) { var t = document.createElement("span"); t.className = "odo-sep"; t.textContent = ch; t.setAttribute("aria-hidden", "true"); out.appendChild(t); continue; }
-      var c = document.createElement("span"); c.className = "odo"; c.setAttribute("aria-hidden", "true");
-      var r = document.createElement("span"); r.className = "odo-r";
-      for (var k = 0; k < 20; k++) { var d = document.createElement("span"); d.textContent = k % 10; r.appendChild(d); }
-      c.appendChild(r); out.appendChild(c); cols.push({r: r, d: +ch});
-    }
-    el.textContent = ""; el.appendChild(out);
-  });
-  var n = cols.length;
-  // each column is exactly as wide as the digit it lands on, so the final number keeps its natural spacing
-  function fit(){ cols.forEach(function(o){ var m = document.createElement("span"); m.textContent = o.d; m.style.cssText = "position:absolute;visibility:hidden;white-space:pre"; o.r.parentNode.parentNode.appendChild(m); o.r.parentNode.style.width = m.getBoundingClientRect().width + "px"; m.remove(); }); }
-  fit(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
-  function roll(){
-    cols.forEach(function(o, i){
-      o.r.style.transitionDuration = (1.3 + (i / Math.max(1, n - 1)) * 0.9).toFixed(2) + "s";
-      o.r.style.transform = "translateY(" + (-(10 + o.d)) + "em)";
+  function odometer(sel, rowSel){
+    var nums = [].slice.call(document.querySelectorAll(sel)), row = document.querySelector(rowSel);
+    if (!nums.length || !row) return;
+    var cols = [];
+    nums.forEach(function(el){
+      var txt = el.textContent, out = document.createDocumentFragment();
+      el.setAttribute("aria-label", txt);
+      for (var i = 0; i < txt.length; i++) {
+        var ch = txt[i];
+        if (!/[0-9]/.test(ch)) { var t = document.createElement("span"); t.className = "odo-sep"; t.textContent = ch; t.setAttribute("aria-hidden", "true"); out.appendChild(t); continue; }
+        var c = document.createElement("span"); c.className = "odo"; c.setAttribute("aria-hidden", "true");
+        var r = document.createElement("span"); r.className = "odo-r";
+        for (var k = 0; k < 20; k++) { var d = document.createElement("span"); d.textContent = k % 10; r.appendChild(d); }
+        c.appendChild(r); out.appendChild(c); cols.push({r: r, d: +ch});
+      }
+      el.textContent = ""; el.appendChild(out);
     });
+    var n = cols.length;
+    // each column is exactly as wide as the digit it lands on, so the final number keeps its natural spacing
+    function fit(){ cols.forEach(function(o){ var m = document.createElement("span"); m.textContent = o.d; m.style.cssText = "position:absolute;visibility:hidden;white-space:pre"; o.r.parentNode.parentNode.appendChild(m); o.r.parentNode.style.width = m.getBoundingClientRect().width + "px"; m.remove(); }); }
+    fit(); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    function roll(){
+      cols.forEach(function(o, i){
+        o.r.style.transitionDuration = (1.3 + (i / Math.max(1, n - 1)) * 0.9).toFixed(2) + "s";
+        o.r.style.transform = "translateY(" + (-(10 + o.d)) + "em)";
+      });
+    }
+    var done = false;
+    function go(){ if (done) return; done = true; window.removeEventListener("scroll", chk); setTimeout(roll, 150); }
+    function chk(){ var r = row.getBoundingClientRect(); if (r.top < innerHeight * .85 && r.bottom > 0) go(); }
+    window.addEventListener("scroll", chk, {passive: true});
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting) { io.disconnect(); go(); } }, {threshold: .4});
+      io.observe(row);
+    }
+    chk();
   }
-  var row = document.querySelector(".sum-facts"), done = false;
-  function go(){ if (done) return; done = true; window.removeEventListener("scroll", chk); setTimeout(roll, 150); }
-  function chk(){ var r = row.getBoundingClientRect(); if (r.top < innerHeight * .85 && r.bottom > 0) go(); }
-  window.addEventListener("scroll", chk, {passive: true});
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting) { io.disconnect(); go(); } }, {threshold: .4});
-    io.observe(row);
-  }
-  chk();
+  odometer(".sum-facts strong > span[data-k]", ".sum-facts");
+  odometer(".st-fig b[data-k]", ".stages");
 })();
 </script>
 
