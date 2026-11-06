@@ -164,7 +164,9 @@ section.blk + section.blk{padding-top:0}
 .wm-desc{font-size:15px;line-height:1.75;color:#3a3a3a}
 .wm-facts{margin:0;display:grid;gap:0;border-top:1px solid #eee8de}
 .wm-facts div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #eee8de;font-size:14px}
-.wm-facts dt{color:#8b8578}
+.wm-facts dt{color:#8b8578;white-space:nowrap}
+#siteList{white-space:pre-line}
+.wm-far .wm-site{display:none}
 .wm-facts dd{margin:0;font-weight:700;text-align:right}
 .wm-hint{font-size:13.5px;color:#6f6a60;margin-top:auto}
 .gmap{color:#252525;font-weight:700;text-decoration:none;font-size:13px}
@@ -529,6 +531,56 @@ section[id]{scroll-margin-top:60px}
   .js .rv,.js .rv.pre{transition:none;transform:none;opacity:1}
   .fab .pulse{animation:none}
 }
+/* process: month line under each stage */
+.st-when{font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--s-deep);margin-bottom:-6px}
+/* training curriculum: three columns in the same editorial table language */
+.curri{margin:8px 0 56px;--s-ink:#17140f;--s-ink2:#51493d;--s-hair:rgba(23,20,15,.16);--s-deep:#c94f00;color:var(--s-ink)}
+.cu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--s-ink);border-bottom:2px solid var(--s-ink)}
+.cu-col{padding:22px 24px;border-left:1px solid var(--s-hair);min-width:0}
+.cu-col:first-child{border-left:0;padding-left:0}
+.cu-col ul{list-style:none;margin:14px 0 0;padding:0;font-size:14.5px;color:var(--s-ink2)}
+.cu-col li{position:relative;padding:8px 0 8px 13px;border-top:1px solid var(--s-hair);line-height:1.5}
+.cu-col li:first-child{border-top:0}
+.cu-col li::before{content:"";position:absolute;left:0;top:calc(8px + .68em);width:5px;height:5px;background:var(--s-deep)}
+@media (max-width:880px){
+  .cu-grid{grid-template-columns:1fr}
+  .cu-col,.cu-col:first-child{padding:20px 0;border-left:0}
+  .cu-col+.cu-col{border-top:1px solid var(--s-ink)}
+}
+/* schedule (Gantt): label column + 11-month track, same rules and type as the tables above */
+.gantt{margin-top:56px;--s-ink:#17140f;--s-ink2:#51493d;--s-hair:rgba(23,20,15,.16);--s-deep:#c94f00;color:var(--s-ink)}
+.g-table{border-top:2px solid var(--s-ink);border-bottom:2px solid var(--s-ink)}
+.g-row{display:grid;grid-template-columns:minmax(220px,300px) 1fr;align-items:center;border-top:1px solid var(--s-hair);min-height:52px}
+.g-row:first-child{border-top:0}
+.g-head{min-height:40px;font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.04em;color:var(--s-deep)}
+.g-lab{display:flex;align-items:center;gap:12px;padding:10px 12px 10px 0;min-width:0}
+.g-lab em{flex:none;width:28px;font-style:normal;font-family:var(--f-en);font-weight:900;font-size:24px;line-height:1;color:var(--s-deep)}
+.g-lab b{display:block;font-size:15px;font-weight:700;letter-spacing:-.02em;line-height:1.4}
+.g-lab small{display:block;font-size:12.5px;color:var(--s-ink2);margin-top:1px}
+.g-track{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));align-self:stretch;align-items:center;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(100% / 11 - 1px),var(--s-hair) calc(100% / 11 - 1px),var(--s-hair) calc(100% / 11))}
+.g-head .g-track{background:none}
+.g-head .g-track span{text-align:center}
+.g-bar{grid-row:1;height:26px;margin:0 3px;border-radius:999px;display:grid;place-items:center;font-size:12.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}
+.g-bar.p1,.g-legend .p1{background:var(--orange)}
+.g-bar.p2,.g-legend .p2{background:#ffa57b}
+.g-bar.p2{color:#17140f}
+.g-bar.p3,.g-legend .p3{background:#155930}
+.g-bar.p4,.g-legend .p4{background:#0c7993}
+.g-legend{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--s-ink2)}
+.g-legend li{display:flex;align-items:center;gap:7px}
+.g-legend i{width:22px;height:10px;border-radius:999px}
+@media (max-width:880px){
+  /* phone: activity name on its own line, the month track full width underneath */
+  .g-row{grid-template-columns:1fr;padding:10px 0}
+  .g-head{padding:8px 0}
+  .g-head .g-lab{display:none}
+  .g-lab{padding:0 0 8px}
+  .g-lab em{width:24px;font-size:20px}
+  .g-lab b{font-size:14.5px}
+  .g-track{min-height:28px}
+  .g-head .g-track span{font-size:12px;letter-spacing:0}
+  .g-bar{height:24px;margin:0 2px;font-size:12px}
+}
 /* phone polish: no text under 12px, touch targets at least 44px */
 @media (max-width:880px){
   .tbd{font-size:12px}
@@ -597,10 +649,10 @@ section[id]{scroll-margin-top:60px}
         </div>
         <dl>
           <dt>사업명</dt><dd><span data-k="name"></span></dd>
-          <dt>국가 / 지역</dt><dd><span data-k="country"></span> · <span data-k="region"></span><span class="tbd" data-tbd="region">확정 예정</span></dd>
+          <dt>국가 / 지역</dt><dd><span data-k="country"></span> · <span data-k="region"></span><span class="tbd" data-tbd="region">확정 예정</span><span class="sub">마타벨레랜드 노스주 황게, 마니칼랜드주 부헤라 · 염소를 두 지역에 50%씩 배분</span></dd>
           <dt>사업 기간</dt><dd><span data-k="period"></span><span class="tbd" data-tbd="period">변동 가능</span><span class="sub">사업비 확보 시점에 따라 착수일이 조정될 수 있습니다</span></dd>
           <dt>사업 내용</dt><dd>염소 <span class="num" data-k="goats"></span>마리 지원 + 수혜자 사육 교육<span class="sub">교육: 질병관리 · 번식 · 판매(마케팅) · 축사</span></dd>
-          <dt>지원 대상</dt><dd>약 <span class="num" data-k="families"></span>가정 · <span class="num" data-k="people"></span>명<span class="sub">영양실조 아동, 임산부·수유부, 장애인, 여성·아동 가장 가구 우선</span></dd>
+          <dt>지원 대상</dt><dd>약 <span class="num" data-k="families"></span>가정 · <span class="num" data-k="people"></span>명<span class="sub">가정당 염소 2마리 · 평균 가구원 4명 기준</span><span class="sub">영양실조 아동, 임산부·수유부, 장애인, 여성·아동 가장 가구 우선</span></dd>
           <dt>총 사업비</dt><dd><b class="num" data-k="budgetFull"></b><span class="sub">모든 행정비 포함</span></dd>
           <dt>수행 기관</dt><dd>월드비전<span class="sub"><span data-k="country"></span> 월드비전 현장 사업장과 함께 진행</span></dd>
         </dl>
@@ -694,11 +746,58 @@ section[id]{scroll-margin-top:60px}
         <div class="act-grid">
           <figure class="act-ph"><img src="img/training.jpg" width="1054" height="703" alt="마을 주민들이 모여 교육을 받는 모습" loading="lazy"><figcaption>주민 교육 예시 사진 · 이해를 돕기 위한 예시 이미지입니다.</figcaption></figure>
           <ul class="act-list plain">
-            <li><i><svg viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg></i><div><b>염소 사육 기초 교육</b><small>질병관리 · 번식</small></div></li>
-            <li><i><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 11l2 2 4-4M9 17h6"/></svg></i><div><b>현장 사육 실습 교육</b><small>기록 관리 · 사료 · 질병 예방</small></div></li>
-            <li><i><svg viewBox="0 0 24 24"><path d="M3 21h18M6 17V11M11 17V7M16 17v-4M20 5l-5 5-3-3-5 5"/></svg></i><div><b>판매(마케팅) 교육</b><small>염소와 새끼 염소를 소득으로 연결</small></div></li>
-            <li><i><svg viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10M10 20v-5h4v5"/></svg></i><div><b>축사 관리 교육</b><small>안전하고 위생적인 사육 환경 조성</small></div></li>
+            <li><i><svg viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg></i><div><b>1차 · 염소 사육 기초 교육</b><small>품종 특성 · 축사 · 질병 · 사료 · 기록 관리 기초</small></div></li>
+            <li><i><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V2h6v2M9 11l2 2 4-4M9 17h6"/></svg></i><div><b>2차 · 염소 사육 실습 교육</b><small>번식 · 개체 선발 · 질병 관리 · 사료작물 · 가뭄 대응</small></div></li>
+            <li><i><svg viewBox="0 0 24 24"><path d="M3 21h18M6 17V11M11 17V7M16 17v-4M20 5l-5 5-3-3-5 5"/></svg></i><div><b>3차 · 염소 판매 교육</b><small>구매자 발굴 · 공동 판매 · 가격 협상 · 농민 그룹 강화</small></div></li>
           </ul>
+        </div>
+      </div>
+
+      <div class="curri rv">
+        <div class="proc-head"><h3>염소 사육 교육 과정</h3><span>3단계로 진행됩니다</span></div>
+        <div class="cu-grid">
+          <section class="cu-col">
+            <div class="st-top"><span class="st-no">01</span><div><b>염소 사육 기초 교육</b><i>Basics</i></div></div>
+            <ul>
+              <li>소득·식량·가계 회복력 원천으로서 염소 사육의 중요성</li>
+              <li>염소 품종별 특성</li>
+              <li>재래종과 개량종 비교</li>
+              <li>염소 축사 및 시설</li>
+              <li>염소 질병 관리 기초</li>
+              <li>염소 사료·영양 관리 기초</li>
+              <li>기록 관리</li>
+            </ul>
+          </section>
+          <section class="cu-col">
+            <div class="st-top"><span class="st-no">02</span><div><b>염소 사육 실습 교육</b><i>Practice</i></div></div>
+            <ul>
+              <li>번식 관리</li>
+              <li>개체 선발 및 축군 개량</li>
+              <li>염소 질병 관리</li>
+              <li>새끼 염소 관리 및 폐사율 감소</li>
+              <li>목초지·방목지 및 천연자원 관리</li>
+              <li>사료 배합 및 지역 사료작물 생산</li>
+              <li>가뭄 대응 기법</li>
+              <li>보충 사료 급여 체계</li>
+            </ul>
+          </section>
+          <section class="cu-col">
+            <div class="st-top"><span class="st-no">03</span><div><b>염소 판매 교육</b><i>Market</i></div></div>
+            <ul>
+              <li>잠재 구매자 발굴</li>
+              <li>계절별 가격 변동 이해</li>
+              <li>판매용 염소 준비</li>
+              <li>생축 판매</li>
+              <li>염소고기 생산 및 위생</li>
+              <li>농민 그룹을 통한 공동 판매</li>
+              <li>협상 및 가격 결정</li>
+              <li>손익 이해</li>
+              <li>염소 농민 그룹 구성 및 강화</li>
+              <li>농민 간 상호 학습</li>
+              <li>동물약품·사료 공동 구매</li>
+              <li>수의 서비스, Agritex, 가축 시장 연계</li>
+            </ul>
+          </section>
         </div>
       </div>
 
@@ -707,28 +806,48 @@ section[id]{scroll-margin-top:60px}
         <ol class="stages">
           <li class="stage">
             <div class="st-top"><span class="st-no">01</span><div><b>준비</b><i>Prepare</i></div></div>
+            <span class="st-when">2027. 1–2월</span>
             <h3>지역 설명회와 <br>수혜 가구 선정</h3>
-            <ul><li>마을 단위 지역 설명회 개최</li><li>취약가정 선정 · 참여 협약</li><li>염소 사육 기초 교육</li></ul>
+            <ul><li>지역 설명회 개최</li><li>취약가정 선정 · 참여 협약</li><li>1차 염소 사육 기초 교육</li></ul>
           </li>
           <li class="stage">
             <div class="st-top"><span class="st-no">02</span><div><b>지원</b><i>Deliver</i></div></div>
+            <span class="st-when">2027. 3–6월</span>
             <h3>염소 조달과 <br>가정별 배분</h3>
-            <ul><li>현지 조달 · 입찰</li><li>도착 즉시 구충 · 백신 접종</li><li>수혜 가구별 염소 배분</li></ul>
+            <ul><li>현지 조달 · 입찰</li><li>운송 · 가정별 배분 (가정당 2마리)</li><li>백신 접종 · 보충 사료 구매</li></ul>
             <div class="st-fig"><b class="num" data-k="goats"></b><span>마리 지원</span></div>
           </li>
           <li class="stage">
             <div class="st-top"><span class="st-no">03</span><div><b>교육</b><i>Train</i></div></div>
+            <span class="st-when">2027. 7–9월</span>
             <h3>현장 중심의 <br>사육 실습 교육</h3>
-            <ul><li>기록 관리 · 사료</li><li>질병 예방 · 번식</li><li>판매(마케팅) · 축사 관리</li></ul>
+            <ul><li>기록 관리 · 사료</li><li>질병 예방 · 번식</li><li>판매(마케팅)</li></ul>
           </li>
           <li class="stage">
             <div class="st-top"><span class="st-no">04</span><div><b>정착</b><i>Sustain</i></div></div>
+            <span class="st-when">2027. 7–11월</span>
             <h3>점검과 <br>농가 모니터링</h3>
             <ul><li>배분 후 염소 상태 점검</li><li>농가별 사육 현황 모니터링</li><li>자립 기반 정착 지원</li></ul>
             <div class="st-fig"><span>약</span><b class="num" data-k="families"></b><span>가정 자립</span></div>
           </li>
         </ol>
         <p class="swipe-hint" aria-hidden="true">옆으로 넘겨 보세요 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+      </div>
+
+      <div class="gantt rv">
+        <div class="proc-head"><h3>사업 추진 일정</h3><span>2027년 1월 ~ 11월</span></div>
+        <div class="g-table" role="table" aria-label="2027년 1월부터 11월까지 월별 사업 추진 일정">
+          <div class="g-row g-head"><div class="g-lab">활동</div><div class="g-track"><span>1월</span><span>2월</span><span>3월</span><span>4월</span><span>5월</span><span>6월</span><span>7월</span><span>8월</span><span>9월</span><span>10월</span><span>11월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>01</em><span><b>지역 설명회 및 수혜 가구 선정</b></span></div><div class="g-track"><span class="g-bar p1" style="grid-column:1 / 3">2개월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>02</em><span><b>염소 사육 기초 교육</b></span></div><div class="g-track"><span class="g-bar p1" style="grid-column:1 / 3">2개월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>03</em><span><b>조달 및 입찰</b></span></div><div class="g-track"><span class="g-bar p2" style="grid-column:3 / 6">3개월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>04</em><span><b>운송 및 배분</b></span></div><div class="g-track"><span class="g-bar p2" style="grid-column:5 / 7">2개월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>05</em><span><b>염소 백신 접종</b></span></div><div class="g-track"><span class="g-bar p2" style="grid-column:5 / 7">2개월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>06</em><span><b>보충 사료 구매</b></span></div><div class="g-track"><span class="g-bar p2" style="grid-column:5 / 7">2개월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>07</em><span><b>염소 사육 실습 교육</b><small>기록 관리 · 사료 · 질병 예방 · 번식 · 판매</small></span></div><div class="g-track"><span class="g-bar p3" style="grid-column:7 / 10">3개월</span></div></div>
+          <div class="g-row"><div class="g-lab"><em>08</em><span><b>배분 후 점검 및 농가 모니터링</b></span></div><div class="g-track"><span class="g-bar p4" style="grid-column:7 / 12">5개월</span></div></div>
+        </div>
+        <ul class="g-legend"><li><i class="p1"></i>준비 · 선정</li><li><i class="p2"></i>조달 · 배분</li><li><i class="p3"></i>역량 강화</li><li><i class="p4"></i>모니터링</li></ul>
       </div>
     </div>
   </section>
@@ -789,19 +908,22 @@ section[id]{scroll-margin-top:60px}
 var CAMPAIGN = {
   year: "2027",
   country: "짐바브웨",
-  region: "세부 지역 미정",
-  regionConfirmed: false,
+  region: "황게 이스트 ADP · 부헤라 웨스트 ADP",
+  regionConfirmed: true,
   period: "2027년 1월 ~ 11월 (약 11개월)",
   periodConfirmed: false,
   budget: 110440000,        // 모금 목표 / 총 사업비(원), 행정비 포함
   goats: 1004,              // 지원 염소 수 (1마리 후원금 = budget ÷ goats)
   goatsPerFamily: 2,
-  peoplePerFamily: 5,
+  peoplePerFamily: 4,        // 짐바브웨 평균 가구원 수
   donateUrl: "",            // 후원하기 페이지 링크가 나오면 여기에 입력
   // 사업 지역: 확정되면 지도에 주황색 핀으로 표시됩니다. 여러 곳 입력 가능.
   // 예) { name: "마니칼랜드주 치마니마니", lat: -19.80, lon: 32.87 }
   // 구(District) 이름을 넣으면 그 구역 전체가 주황색으로 표시됩니다. 예) { name: "치마니마니", district: "Chimanimani" }
-  regions: []
+  regions: [
+    { name: "황게 이스트 ADP", district: "Hwange" },   // 마타벨레랜드 노스주 황게
+    { name: "부헤라 웨스트 ADP", district: "Buhera" }  // 마니칼랜드주 부헤라
+  ]
 };
 /* ========================================= */
 
@@ -1077,7 +1199,7 @@ var CAMPAIGN = {
   // (countries: Natural Earth via world-atlas; Zimbabwe boundaries: geoBoundaries, ZIMSTAT · OCHA, CC BY 3.0 IGO)
   var sites = (c.regions || []).filter(function(r){ return r && (r.district || (isFinite(r.lat) && isFinite(r.lon))); });
   if (sites.length) {
-    document.getElementById("siteList").textContent = sites.map(function(r){ return r.name; }).join(" · ");
+    document.getElementById("siteList").textContent = sites.map(function(r){ return r.name; }).join("\n");
   } else if (c.regionConfirmed) {
     document.getElementById("siteList").textContent = c.region;
   }
@@ -1175,7 +1297,13 @@ var CAMPAIGN = {
         var to = item.d ? b.getCenter() : item.at;
         if (reduceMotion) map.setView(to, z, {animate: false}); else map.flyTo(to, z, {duration: 2});
       }
-      if (btnSite && siteHits.length) { btnSite.hidden = false; btnSite.addEventListener("click", function(){ flySite(siteHits[0]); }); }
+      if (btnSite && siteHits.length) { btnSite.hidden = false; btnSite.addEventListener("click", function(){
+        if (siteHits.length === 1) return flySite(siteHits[0]);
+        // several sites: frame them all together
+        var all = L.latLngBounds([]); siteHits.forEach(function(it){ all.extend(it.d ? L.geoJSON(it.d).getBounds() : it.at); });
+        btnAll.classList.remove("on"); btnZim.classList.remove("on"); btnSite.classList.add("on");
+        map.flyToBounds(all, {padding: [40, 40], duration: 2});
+      }); }
 
       // labels
       function label(ll, html, cls){ return L.marker(ll, {icon: L.divIcon({className: "wm-lbl " + cls, html: html, iconSize: null}), interactive: false, keyboard: false}); }
@@ -1192,6 +1320,8 @@ var CAMPAIGN = {
       function show(layer, on){ if (!layer) return; if (on && !map.hasLayer(layer)) layer.addTo(map); else if (!on && map.hasLayer(layer)) map.removeLayer(layer); }
       function levels(){
         var z = map.getZoom();
+        // site name tags only once zoomed past the continent view (two sites sit close together)
+        map.getContainer().classList.toggle("wm-far", z < Z_PROV);
         show(provLine, z >= Z_PROV);
         show(provLbls, z >= Z_PROV && z < Z_WARD + .5);
         provLbls.eachLayer(function(m){ m.setOpacity(m.small && z < 8 ? 0 : 1); });
